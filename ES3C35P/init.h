@@ -89,66 +89,90 @@ static void tp_init(){
 
 static void i2s_init()
 {
-    i2s_chan_config_t RXchan_cfg_tx = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
-    //i2s_chan_config_t TXchan_cfg_rx = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
-
-   // i2s_new_channel(&TXchan_cfg_rx, &RX_chan_tx, &TX_chan_rx);
-    i2s_new_channel(&RXchan_cfg_tx, &RX_chan_tx, &TX_chan_rx);
+    // 1. Инициализируем один канал (I2S_NUM_1) в режиме MASTER
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
     
-///////////////////////RX////////////////////////////////////////
-    //32-Bit, MSB-First, Left-Justified
-    //i2s встроенный кодек
+    // Аппаратно связываем TX (выход на динамик) и RX (вход микрофона) на одну тактовую пару ES8311
+    i2s_new_channel(&chan_cfg, &RX_chan_tx, &TX_chan_rx);
+    
+    //------------------------------------------------------------------------------
+    // КОНФИГУРАЦИЯ ДУПЛЕКСНОГО ТРАКТА ПОД КОДЕК ES8311
+    //------------------------------------------------------------------------------
+    
+    // Настраиваем общую структуру тактирования для приема и передачи
     RX_std_cfg_tx.clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(i2s_sample_rate_rx);
-    RX_std_cfg_tx.slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_STEREO);
-    RX_std_cfg_tx.gpio_cfg.mclk = STD_MCLK_OUT;    // some codecs may require mclk signal, this example does
+    TX_std_cfg_rx.clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(i2s_sample_rate_tx);
+    
+    // ИСПРАВЛЕНО ДЛЯ C++: Прямая запись в поля структуры вместо макроса,
+    // что исключает ошибку "no match for 'operator='" и решает проблему data_bit_width!
+    RX_std_cfg_tx.slot_cfg.data_bit_width = I2S_DATA_BIT_WIDTH_16BIT;
+    RX_std_cfg_tx.slot_cfg.slot_bit_width = I2S_SLOT_BIT_WIDTH_32BIT;
+    
+    TX_std_cfg_rx.slot_cfg.data_bit_width = I2S_DATA_BIT_WIDTH_16BIT;
+    TX_std_cfg_rx.slot_cfg.slot_bit_width = I2S_SLOT_BIT_WIDTH_32BIT;
+    
+    // Назначаем одинаковые физические пины для обоих направлений дуплекса ES8311
+    RX_std_cfg_tx.gpio_cfg.mclk = STD_MCLK_OUT;    
     RX_std_cfg_tx.gpio_cfg.bclk = STD_BCLK_OUT;
     RX_std_cfg_tx.gpio_cfg.ws   = STD_WS_OUT;
-    RX_std_cfg_tx.gpio_cfg.dout = STD_DOUT_OUT;
-    RX_std_cfg_tx.gpio_cfg.din  = STD_DIN_OUT;
+    RX_std_cfg_tx.gpio_cfg.dout = STD_DOUT_OUT; // Линия данных на кодек
+    RX_std_cfg_tx.gpio_cfg.din  = STD_DIN_OUT;  // Линия данных с кодека
+    
+    // Копируем ту же самую разводку пинов в структуру микрофона TX_std_cfg_rx
+    TX_std_cfg_rx.gpio_cfg = RX_std_cfg_tx.gpio_cfg;
+
+    // Сбрасываем инверсию фазы тактов
     RX_std_cfg_tx.gpio_cfg.invert_flags.mclk_inv = false;
     RX_std_cfg_tx.gpio_cfg.invert_flags.bclk_inv = false;
     RX_std_cfg_tx.gpio_cfg.invert_flags.ws_inv   = false;
-    RX_std_cfg_tx.slot_cfg.bit_shift=false;
-    RX_std_cfg_tx.slot_cfg.left_align=true;
-    RX_std_cfg_tx.slot_cfg.big_endian=false;
-    RX_std_cfg_tx.slot_cfg.bit_order_lsb=false;
-    RX_std_cfg_tx.slot_cfg.slot_mask = I2S_STD_SLOT_LEFT;
-/*
-///////////////////////TX////////////////////////////////////////
-    //32-Bit, MSB-First, Left-Justified
-    //i2s - микрофон 
-    TX_std_cfg_rx.clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(i2s_sample_rate_tx);
-    TX_std_cfg_rx.slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_STEREO);
-    TX_std_cfg_rx.gpio_cfg.mclk = STD_MCLK_IN_TX;    // some codecs may require mclk signal, this example does
-    TX_std_cfg_rx.gpio_cfg.bclk = STD_BCLK_IN_TX;
-    TX_std_cfg_rx.gpio_cfg.ws   = STD_WS_IN_TX;
-    TX_std_cfg_rx.gpio_cfg.dout = STD_DOUT_IN_TX;
-    TX_std_cfg_rx.gpio_cfg.din  = STD_DIN_IN_TX;
-    TX_std_cfg_rx.gpio_cfg.invert_flags.mclk_inv = false;
-    TX_std_cfg_rx.gpio_cfg.invert_flags.bclk_inv = false;
-    TX_std_cfg_rx.gpio_cfg.invert_flags.ws_inv   = false;
-    TX_std_cfg_rx.slot_cfg.bit_shift=false;
-    TX_std_cfg_rx.slot_cfg.left_align=true;
-    TX_std_cfg_rx.slot_cfg.big_endian=false;
-    TX_std_cfg_rx.slot_cfg.bit_order_lsb=false;
-    TX_std_cfg_rx.slot_cfg.slot_mask = I2S_STD_SLOT_LEFT;
+    TX_std_cfg_rx.gpio_cfg.invert_flags = RX_std_cfg_tx.gpio_cfg.invert_flags;
 
-*/
-/////////////////////////////////////////////////////////////////
+    // Настройка выравнивания данных в слоте под архитектуру ES8311 (Стандарт Philips I2S)
+    RX_std_cfg_tx.slot_cfg.bit_shift = true; // Для Philips стандарта bit_shift должен быть true
+    RX_std_cfg_tx.slot_cfg.left_align = false;
+    RX_std_cfg_tx.slot_cfg.big_endian = false;
+    RX_std_cfg_tx.slot_cfg.bit_order_lsb = false;
+    RX_std_cfg_tx.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH; // Стерео режим для звука
 
-    i2s_channel_init_std_mode(TX_chan_rx, &TX_std_cfg_rx);
+    // Применяем те же настройки выравнивания для микрофона
+    TX_std_cfg_rx.slot_cfg.bit_shift = true;
+    TX_std_cfg_rx.slot_cfg.left_align = false;
+    TX_std_cfg_rx.slot_cfg.big_endian = false;
+    TX_std_cfg_rx.slot_cfg.bit_order_lsb = false;
+    TX_std_cfg_rx.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH;
+
+    // 2. Инициализируем оба направления STD-режима шины
     i2s_channel_init_std_mode(RX_chan_tx, &RX_std_cfg_tx);
+    i2s_channel_init_std_mode(TX_chan_rx, &TX_std_cfg_rx);
+    
+    // 3. Включаем дуплексные каналы в работу
     i2s_channel_enable(RX_chan_tx);
     i2s_channel_enable(TX_chan_rx);
+    
     change_rx_rate = true;
 }
+
+
     
 
 void lcd_init(int l){
     g.Init();
     g.Set_Rotation(1);
+
+    // ИСПРАВЛЕНО: Сначала создаем спрайт, затем задаем ему глубину цвета 16 бит (RGB565)
     gfx.createSprite(g.Get_Width(), g.Get_Height());
+    gfx.setColorDepth(16); 
     gfx.fillSprite(BLACK);
+
+    // Выводим первый чистый кадр по скоростной QSPI шине
+    g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t*)gfx.getPointer());
+    
+    
+    
+    //g.Init();
+    //g.Set_Rotation(1);
+    //gfx.createSprite(g.Get_Width(), g.Get_Height());
+    //gfx.fillSprite(BLACK);
     g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
     //gfx.pushSprite(0,0);
     gfx.setSwapBytes(1);

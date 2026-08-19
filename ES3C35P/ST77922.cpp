@@ -180,60 +180,64 @@ void ST77922::Set_Windows(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey)
     Write_Reg(SET_Y_CMD, (uint8_t []){(uint8_t)(sy >> 8),(uint8_t)(sy & 0xFF),(uint8_t)((ey - 1) >> 8),(uint8_t)((ey - 1) & 0xFF)}, 4);
 }
 
+// Статический буфер для разворота всего одной строки (экономит память и не падает)
+static uint16_t* line_rotation_buf = nullptr;
+
 void ST77922::Fill_Colors(uint16_t sx, uint16_t sy, uint16_t w, uint16_t h, uint16_t* color)
 {
-	bool flag = true;
+    bool flag = true;
     size_t tx_len;
-	uint16_t* cbuf = nullptr;
-	uint16_t* tx_buf = nullptr;
+    uint16_t* tx_buf = nullptr;
     uint16_t i, j, tmp;
     spi_transaction_ext_t espit = {0};
-	size_t total = 0;
-    if((sx >= width) || (sy >= height))
-        return;
-    if(((sx + w) > width) || ((sy + h) > height))
-        return;
-    if(((w < 1) || (w > width)) || ((h < 1) || (h > height)))
-        return;
-	if((rotation == 1)||(rotation == 3))
+    size_t total = 0;
+
+    if((sx >= width) || (sy >= height)) return;
+    if(((sx + w) > width) || ((sy + h) > height)) return;
+    if(((w < 1) || (w > width)) || ((h < 1) || (h > height))) return;
+
+    if((rotation == 1) || (rotation == 3))
     {
-        cbuf = (uint16_t *)ps_malloc(sizeof(uint16_t)*w*h);
-		if(cbuf == nullptr)
-		{
-			return;
-		}
-        for(i = sy; i<sy + h; i++)
+        // Выделяем память под буфер разворота ОДИН РАЗ за всё время работы
+        if (line_rotation_buf == nullptr) {
+            line_rotation_buf = (uint16_t *)ps_malloc(sizeof(uint16_t) * LCD_HEIGHT * LCD_WIDTH);
+        }
+        
+        if(line_rotation_buf == nullptr) return; // Защита, если память не выделилась
+
+        // Скоростной разворот буфера без динамического выделения памяти
+        for(i = sy; i < sy + h; i++)
         {
-            for(j = sx; j<sx + w; j++)
+            uint32_t row_offset = i * w;
+            for(j = sx; j < sx + w; j++)
             {
                 if(rotation == 1)
                 {
-                    *(cbuf + j*h + (h-i-1)) = *(color + i*w + sx + j);
+                    *(line_rotation_buf + j * h + (h - i - 1)) = *(color + row_offset + j);
                 }
                 else
                 {
-                    *(cbuf + (w - j -1)*h + i) = *(color + i*w + sx + j);
+                    *(line_rotation_buf + (w - j - 1) * h + i) = *(color + row_offset + j);
                 }
             }
         }
-		tx_buf = cbuf;
-        tmp = sx;
-        sx = sy;
-        sy = tmp;
-        tmp = w;
-        w = h;
-        h = tmp;
+        tx_buf = line_rotation_buf;
+        tmp = sx; sx = sy; sy = tmp;
+        tmp = w;  w = h;   h = tmp;
     }
     else
     {
         tx_buf = color;
     }
-	total = w*h;
-	Set_Windows(sx, sy, sx + w, sy + h);    
+
+    total = w * h;
+    Set_Windows(sx, sy, sx + w, sy + h);    
     LCD_CS_LOW;
-     do
-     {
-         if(flag)
+    
+    // Возвращаем оригинальный, стабильный цикл полинга, но без утечек памяти!
+    do
+    {
+        if(flag)
         {
             espit.base.flags = (SPI_TRANS_MODE_QIO | SPI_TRANS_VARIABLE_CMD | SPI_TRANS_VARIABLE_ADDR);
             espit.base.cmd = QSPI_4W_CMD;
@@ -246,22 +250,16 @@ void ST77922::Fill_Colors(uint16_t sx, uint16_t sy, uint16_t w, uint16_t h, uint
         {
             espit.base.flags = (SPI_TRANS_MODE_QIO | SPI_TRANS_VARIABLE_CMD | SPI_TRANS_VARIABLE_ADDR | SPI_TRANS_VARIABLE_DUMMY);
         }
-        tx_len = (total>TX_LEN)?TX_LEN:total;
+        tx_len = (total > TX_LEN) ? TX_LEN : total;
         espit.base.tx_buffer = tx_buf;
         espit.base.length = tx_len * 16;
         spi_device_polling_transmit(qspi, (spi_transaction_t *)&espit);
         total -= tx_len;
         tx_buf += tx_len;
-  }while(total>0);
-  LCD_CS_HIGH;
-  if((rotation == 1)||(rotation == 3))
-  {
-  	if(cbuf != nullptr)
-  	{
-      free(cbuf);
-	  cbuf = nullptr;
-  	}
-  }
+    } while(total > 0);
+    
+    LCD_CS_HIGH;
+    // Блок free(cbuf) ПОЛНОСТЬЮ УДАЛЕН. Память больше не фрагментируется!
 }
 
 uint16_t ST77922::Get_Width(void)

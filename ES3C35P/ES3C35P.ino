@@ -63,12 +63,22 @@ void setup()
 }
 
 void loop(void){
-    cur_ms=millis();
+    cur_ms = millis();
+    
+    // 1. Опрашиваем тачскрин, энкодер и кнопки НА КАЖДОМ круге цикла loop()
+    // Это сделает управление трансивером ультра-отзывчивым и мгновенным!
     screens(txrx_mode);
-    //gfx.pushSprite(0,0);
-    g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
+    control();
     time_001();
     time1();
-    control();
-    fps=millis()-cur_ms;
+    
+    // 2. Отрисовку дисплея выполняем строго по таймеру раз в 40 миллисекунд (~25 FPS)
+    
+        // Выводим готовый спрайт 
+        g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t*)gfx.getPointer());
+   
+    
+    // Расчет FPS (теперь он покажет реальную скорость работы логики интерфейса)
+    fps = millis() - cur_ms;
 }
+

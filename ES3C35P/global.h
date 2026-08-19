@@ -106,8 +106,14 @@ uint8_t* spi_master_rx_buf;
 
 //Arduino_DataBus *bus = new Arduino_ESP32QSPI(LCD_CS,LCD_SCK,LCD_D0,LCD_D1,LCD_D2,LCD_D3);
 //Arduino_GFX *g = new Arduino_NV3041A(bus, LCD_RST, 0 /* rotation */, true /* IPS */);
-TFT_eSPI tft = TFT_eSPI();
-TFT_eSprite gfx = TFT_eSprite(&tft);
+//TFT_eSPI tft = TFT_eSPI();
+//TFT_eSprite gfx = TFT_eSprite(&tft);
+//TFT_eSPI* tft_dummy = (TFT_eSPI*)NULL;
+
+// 2. Инициализируем спрайт-холст напрямую через пустой родительский указатель
+TFT_eSPI* tft_dummy = (TFT_eSPI*)NULL;
+TFT_eSprite gfx = TFT_eSprite(tft_dummy); 
+
 ST77922 g = ST77922();
 //TFT_eSprite gfx = TFT_eSprite(&g);
 

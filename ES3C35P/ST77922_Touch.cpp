@@ -11,10 +11,10 @@ ST77922_TOUCH::ST77922_TOUCH(void)
 	i2c_master_bus_handle_t bus_handle;
     i2c_master_bus_config_t touch_i2c_cfg = {
         .i2c_port = I2C_NUM,
-		.sda_io_num = TOUCH_SDA,
+				.sda_io_num = TOUCH_SDA,
         .scl_io_num = TOUCH_SCL, 
         .clk_source = I2C_CLK_SRC_DEFAULT,
-        .glitch_ignore_cnt = 7,
+        .glitch_ignore_cnt = 3,
         .flags=
         {
         	.enable_internal_pullup = true,
