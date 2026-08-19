@@ -1,13 +1,21 @@
 #include "hal/i2s_hal.h"
 
 void spi_init(){
-
-  master.setDataMode(SPI_MODE0);
-  master.setFrequency(20000000);
-  master.setMaxTransferSize(SPI_BUFFER_SIZE);
+  master.setDataMode(SPI_MODE3);             // Режим MODE3 под rPLL нашей ПЛИС
+  master.setFrequency(50000000);             // 50 МГц скоростной связи
+  
+  // ИСПРАВЛЕНО: Жестко ограничиваем транзакцию DMA пятью байтами (40 бит)
+  master.setMaxTransferSize(5);              
+  
   master.setDutyCyclePos(96);              
-  master.begin(1, SPI_SCLK, SPI_MISO, SPI_MOSI, SPI_SS);
+  master.begin(SPI2_HOST, SPI_SCLK, SPI_MISO, SPI_MOSI, SPI_SS); 
+  
+  // КРИТИЧЕСКИ ВАЖНО: Выделяем физическую память под буферы с запасом 
+  // до 8 байт для безопасного 32-битного выравнивания DMA-автомата!
+  spi_master_tx_buf = (uint8_t*)heap_caps_malloc(8, MALLOC_CAP_DMA);
+  spi_master_rx_buf = (uint8_t*)heap_caps_malloc(8, MALLOC_CAP_DMA);
 }
+
 
 void buf_init(){
   for(int i=0;i<NTAPS_RX+1;i++){

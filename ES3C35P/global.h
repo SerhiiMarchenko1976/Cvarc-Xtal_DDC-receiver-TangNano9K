@@ -148,6 +148,7 @@ struct COMPLEX_int16
   int16_t im;
 };
 uint32_t i2s_sample_rate_rx = 96000;    //частота дискретизации при приеме
+uint8_t s_rate = 2;
 uint32_t i2s_sample_rate_tx = 48000;    //частота дискретизации при передаче
 #define NUM_SAMPLE_BUF  (1024)      //размер входного буфера
 #define NUM_FFT_BUF     (NUM_SAMPLE_BUF*2)
@@ -190,7 +191,11 @@ int limited_fft = 10000000;
 float avg_fft = 0.0f;
 bool dec_Ifgain = false;
 bool inc_Ifgain = false;
+bool att_on = 1;
+bool preamp_on = 0;
 uint32_t agc_coeff = 1;
+uint8_t dac_level = 255;
+
 static float coef_fft = 0.000000001f;
 
 int bandwidth=3000; //текущая полоса пропускания, отображаемая на спектре

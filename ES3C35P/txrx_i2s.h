@@ -14,19 +14,135 @@ i2s_std_config_t                 RX_std_cfg_tx;
 i2s_chan_handle_t                TX_chan_rx; 
 i2s_std_config_t                 TX_std_cfg_rx;
 
+// Структура 40-битного пакета (5 байт) для ПЛИС
+union SdrPacket40 {
+    struct {
+        uint32_t data;    // 32 бита полезных данных (частота или I/Q)
+        uint8_t  command; // 8 бит — Адрес регистра (Команда)
+    } __attribute__((packed)) reg;
+    uint8_t bytes[5];     // Массив из 5 байт для DMA-передачи
+};
 
+// Функция для отправки одиночных команд (Частота, АТТ, УВЧ) в ПЛИС
+static void sdr_spi_send_register(uint8_t cmd_addr, uint32_t payload_data) {
+    union SdrPacket40 packet;
+    packet.reg.command = cmd_addr;
+    packet.reg.data = payload_data;
+    
+    // Разворот байт (Endianness) для Verilog ПЛИС
+    spi_master_tx_buf[0] = packet.bytes[4]; // Команда летит первой
+    spi_master_tx_buf[1] = packet.bytes[3];
+    spi_master_tx_buf[2] = packet.bytes[2];
+    spi_master_tx_buf[3] = packet.bytes[1];
+    spi_master_tx_buf[4] = packet.bytes[0];
+    
+    // Передаем строго 5 байт
+    master.transfer(spi_master_tx_buf, spi_master_rx_buf, 5);
+}
+
+void io_fpga(){
+    union SdrPacket40 packet;
+    static bool ptt_from_fpga = false;
+    
+    if (txrx_mode == RX_MODE) {
+        packet.reg.command = 0x00; // На приеме шлем пустую команду, просто забираем звук из FIFO
+        packet.reg.data = 0;
+    } else {
+        packet.reg.command = 0x03; // На передаче шлем команду 03 и звук микрофона
+        // Пакуем 16 бит IMAG и 16 бит REAL в 32-битное поле
+        uint32_t audio_word = 0;
+        audio_word |= (uint16_t)output_buffer[0].re; // Ваша текущая точка звука
+        audio_word |= ((uint32_t)(uint16_t)output_buffer[0].im << 16);
+        packet.reg.data = audio_word;
+    }
+
+    // Разворот байт для отправки в ПЛИС
+    spi_master_tx_buf[0] = packet.bytes[4];
+    spi_master_tx_buf[1] = packet.bytes[3];
+    spi_master_tx_buf[2] = packet.bytes[2];
+    spi_master_tx_buf[3] = packet.bytes[1];
+    spi_master_tx_buf[4] = packet.bytes[0];
+
+    // Передаем и принимаем строго 5 байт (40 бит) через DMA
+    master.transfer(spi_master_tx_buf, spi_master_rx_buf, 5);
+
+    // Распаковываем принятые 40 бит ответа (Звук приема из FIFO ПЛИС)
+    uint64_t rx_raw = 0;
+    rx_raw |= ((uint64_t)spi_master_rx_buf[0] << 32);
+    rx_raw |= ((uint64_t)spi_master_rx_buf[1] << 24);
+    rx_raw |= ((uint64_t)spi_master_rx_buf[2] << 16);
+    rx_raw |= ((uint64_t)spi_master_rx_buf[3] << 8);
+    rx_raw |= ((uint64_t)spi_master_rx_buf[4]);
+
+    ptt_from_fpga = (bool)((rx_raw >> 39) & 0x01);
+    if (ptt_from_fpga) {
+              txrx_mode = TX_MODE;
+          } else {
+              txrx_mode = RX_MODE;
+          }
+
+    // Раскладываем по буферам I/Q сэмплы
+    int16_t rx_imag_val = (int16_t)(rx_raw & 0xFFFF);        // Младшие 16 бит
+    int16_t rx_real_val = (int16_t)((rx_raw >> 16) & 0xFFFF); // Следующие 16 бит
+
+    // Заполняем ваш массив input_buffer для обработки и вывода в I2S
+    for (int i = 0; i < NUM_SAMPLE_BUF; i++) {
+        input_buffer[i].re = (int32_t)rx_real_val; 
+        input_buffer[i].im = (int32_t)rx_imag_val;
+    }
+}
+
+
+/* // 
 void io_fpga(){
     spi_master_tx_buf = (uint8_t*)&output_buffer[0].re;
     spi_master_rx_buf = (uint8_t*)&input_buffer[0].re;
     master.transfer(spi_master_tx_buf,spi_master_rx_buf, SPI_BUFFER_SIZE);
 }
+*/
 
 static void txrx_in(void *args)
 {
     size_t r_bytes = 0;
     int size_buf = NUM_SAMPLE_BUF*sizeof(COMPLEX_int);
     uint32_t srate = 0b10;
+    static uint32_t last_rx_freq = 0;
+    static uint32_t last_tx_freq = 0;
+    static uint8_t  last_peripheral = 0;
+
     while (1) {
+
+ 
+    // Внутри цикла while(1) перед вызовом io_fpga():
+    
+    // 1. Проверяем, изменилась ли частота приема. Если да — шлем команду 0x01
+    if (rx_tune_phase != last_rx_freq) {
+        sdr_spi_send_register(0x01, rx_tune_phase);
+        last_rx_freq = rx_tune_phase;
+    }
+
+    // 2. Проверяем частоту передачи. Если изменилась — шлем команду 0x04
+    if (tx_tune_phase != last_tx_freq) {
+        sdr_spi_send_register(0x04, tx_tune_phase);
+        last_tx_freq = tx_tune_phase;
+    }
+
+    // 3. Формируем байт управления реле (dac_level, att_on, preamp_on)
+    // Собираем маску: Бит 8 - att, Бит 9 - preamp, Бит 10-11 - s_rate
+    uint32_t current_peripheral = 0;
+    current_peripheral |= (dac_level & 0xFF); // Уровень громкости/ШИМ мощности
+    if (att_on)    current_peripheral |= (1 << 8);
+    if (preamp_on) current_peripheral |= (1 << 9);
+    current_peripheral |= ((s_rate & 0x03) << 10);
+
+    // Если настройки периферии изменились — шлем команду 0x02
+    if (current_peripheral != last_peripheral) {
+        sdr_spi_send_register(0x02, current_peripheral);
+        last_peripheral = current_peripheral;
+    }
+
+    // 4. И только теперь вызываем наш скоростной аудио-обмен!
+
       //прием из плис след.порции отсчетов в старшую часть рабочего буфера и передача выходного буфера
       io_fpga();
       
@@ -36,9 +152,9 @@ static void txrx_in(void *args)
           i2s_channel_reconfig_std_clock(RX_chan_tx, &RX_std_cfg_tx.clk_cfg);
           i2s_channel_enable(RX_chan_tx);    
           change_rx_rate=false;
-          if(i2s_sample_rate_rx==96000){srate=0b10;}
-          if(i2s_sample_rate_rx==48000){srate=0b01;}
-          if(i2s_sample_rate_rx==24000){srate=0b00;}
+          if(i2s_sample_rate_rx==96000){s_rate=2;}
+          if(i2s_sample_rate_rx==48000){s_rate=1;}
+          if(i2s_sample_rate_rx==24000){s_rate=0;}
         }
          //перенос ранее принятых отсчетов в младшую часть рабочего буфера с перекрытием 50% (overlap & save)
         for (int i=0;i<NUM_SAMPLE_BUF;i++){
@@ -48,16 +164,18 @@ static void txrx_in(void *args)
         //ждем сигнала от dsp-обработчика о готовности dsp-буфера для приема след.партии отсчетов
         
         for (int i=0; i<NUM_SAMPLE_BUF; i++) {
-            workbuf_in[i+NUM_SAMPLE_BUF].re = workbuf_tmp[i].re = (float)((input_buffer[i].re&0xffffff)<<2);
-            workbuf_in[i+NUM_SAMPLE_BUF].im = workbuf_tmp[i].im = (float)((input_buffer[i].im&0xffffff)<<2);
-            fft_in[i].re = (float)((input_buffer[i].re&0xffff));
-            fft_in[i].im = (float)((input_buffer[i].im&0xffff));
-            //ptt=(input_buffer[i].im&0xf0000000)>>31; //n_ptt из fpga (раскомментировать, если fpga подключен)
-            if (txrx_mode==RX_MODE)output_buffer[i].re=rx_tune_phase;//слово частоты приема в fpga;
-            if (txrx_mode==RX_MODE)output_buffer[i].im=srate;//слово управления в fpga;
-            if (txrx_mode==RX_MODE)output_buffer[i].im &=0x7FFFFFFF;//ptt off
-
+            // ВАЖНО: input_buffer теперь содержит ЧИСТЫЕ 16-битные знаковые числа,
+            // пришедшие из io_fpga(). Никаких масок &0xffffff и сдвигов <<2 больше делать не нужно!
+            int16_t sample_re = (int16_t)input_buffer[i].re;
+            int16_t sample_im = (int16_t)input_buffer[i].im;
+            // Направляем звук в основной тракт обработки (к кодеку)
+            workbuf_in[i+NUM_SAMPLE_BUF].re = workbuf_tmp[i].re = (float)sample_re;
+            workbuf_in[i+NUM_SAMPLE_BUF].im = workbuf_tmp[i].im = (float)sample_im;
+            // Направляем данные на БПФ (для водопада панорамы)
+            fft_in[i].re = (float)sample_re;
+            fft_in[i].im = (float)sample_im;
           }
+       
           fft_for_display((float*)&fft_in);//отправляем fft-буфер в обработку для спектра
         xSemaphoreTake(xIN, portMAX_DELAY);
         if(txrx_mode==RX_MODE){//режим приема

@@ -196,9 +196,9 @@ void t_touched(){ //опрос тачскрина
       if(BTN_MODE_LSB)    {rf_mode=0;l_key=5;t_press=true;}//режим модуляции
       if(BTN_MODE_USB)    {rf_mode=1;l_key=5;t_press=true;}//
       if(BTN_MODE_AM)     {rf_mode=2;l_key=5;t_press=true;}//
-      if(BTN_SR_24)       {i2s_sample_rate_rx=24000;l_key=6;t_press=true;}//частота дискретизации
-      if(BTN_SR_48)       {i2s_sample_rate_rx=48000;l_key=6;t_press=true;}//частота дискретизации
-      if(BTN_SR_96)       {i2s_sample_rate_rx=96000;l_key=6;t_press=true;}//частота дискретизации
+      if(BTN_SR_24)       {i2s_sample_rate_rx=24000;s_rate = 0;l_key=6;t_press=true;}//частота дискретизации
+      if(BTN_SR_48)       {i2s_sample_rate_rx=48000;s_rate = 1;l_key=6;t_press=true;}//частота дискретизации
+      if(BTN_SR_96)       {i2s_sample_rate_rx=96000;s_rate = 2;l_key=6;t_press=true;}//частота дискретизации
       if(BTN_RIT)         {l_key=7;t_press=true;}//режим отстройки
       if(BTN_SBAND){ //выбор диапазона
         int x=20;int y=80;
