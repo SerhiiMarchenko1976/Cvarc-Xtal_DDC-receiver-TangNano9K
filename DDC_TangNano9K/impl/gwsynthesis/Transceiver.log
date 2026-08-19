@@ -1,0 +1,71 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cdc_sync.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic_interp.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cordic_rx.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cordic_tx.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\fifo.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\filter.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fir.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\firinterp.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_mult\gowin_mult.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_prom\gowin_prom.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_prom\gowin_prom_fir.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_rpll\gowin_rpll.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_sdpb\Gowin_SDPB_36x64.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_sp\gowin_sp_shift.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\receiver.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\spi_module.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\top_transceiver.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\transmitter.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\varcic.v'
+Compiling module 'top_trx'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\top_transceiver.v":1)
+Compiling module 'Gowin_rPLL'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_rpll\gowin_rpll.v":10)
+Compiling module 'filter'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\filter.v":1)
+Compiling module 'Receiver'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\receiver.v":1)
+Compiling module 'cordic_rx'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cordic_rx.v":7)
+Compiling module 'varcic(STAGES=4,DECIMATION=32,IN_WIDTH=20,ACC_WIDTH=32,OUT_WIDTH=20)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\varcic.v":8)
+Compiling module 'cic_integrator(WIDTH=32)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\varcic.v":131)
+Compiling module 'cic_comb(WIDTH=32)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\varcic.v":150)
+Compiling module 'cic(STAGES=4,DECIMATION=10,IN_WIDTH=20)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic.v":1)
+Compiling module 'cic_integrator1(WIDTH=30)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic.v":120)
+Compiling module 'cic_comb1(WIDTH=30)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic.v":91)
+Compiling module 'fir_coeffs'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fir.v":216)
+Compiling module 'Gowin_pROM_fir'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_prom\gowin_prom_fir.v":9)
+Compiling module 'fir(OUT_WIDTH=24)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fir.v":8)
+WARN  (EX3834) : Case condition never applies("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fir.v":84)
+Compiling module 'Gowin_SP'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_sp\gowin_sp_shift.v":10)
+Compiling module 'fir_mac'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fir.v":191)
+Compiling module 'Gowin_MULT'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_mult\gowin_mult.v":9)
+Compiling module 'cdc_sync'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cdc_sync.v":29)
+Compiling module 'Transmitter'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\transmitter.v":5)
+Compiling module 'FirInterp8'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\firinterp.v":6)
+Compiling module 'Gowin_pROM'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_prom\gowin_prom.v":9)
+Compiling module 'Gowin_SDPB'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\gowin_sdpb\Gowin_SDPB_36x64.v":10)
+Compiling module 'CicInterpM5(RRRR=156,IBITS=15,OBITS=15,GBITS=24)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cic_interp.v":5)
+Compiling module 'cordic_tx(OUT_WIDTH=14)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\cordic_tx.v":25)
+Compiling module 'spi_slave(WIDTH=40)'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\spi_module.v":13)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\spi_module.v":42)
+Compiling module 'fifo'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\fifo.v":640)
+Compiling module '**'("D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\fifo.v":639)
+NOTE  (EX0101) : Current top module is "top_trx"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\impl\gwsynthesis\Transceiver.vg" completed
+[100%] Generate report file "D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\impl\gwsynthesis\Transceiver_syn.rpt.html" completed
+GowinSynthesis finish
