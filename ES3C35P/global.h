@@ -7,12 +7,13 @@ ESP32DMASPI::Master master;
 
 uint8_t* spi_master_tx_buf;
 uint8_t* spi_master_rx_buf;
+
 // Жестко определяем номера пинов ESP32-S3 в соответствии с вашей таблицей
-#define SDR_CS   2   // IO2
-#define SDR_MOSI 3   // IO3
-#define SDR_MISO 4   // IO4
-#define SDR_SCK  5   // IO5
-#define SDR_START 6  // IO6 (Сигнал сброса/старта ПЛИС)
+//#define SDR_CS   2   // IO2
+//#define SDR_MOSI 3   // IO3
+//#define SDR_MISO 4   // IO4
+//#define SDR_SCK  5   // IO5
+//#define SDR_START 6  // IO6 (Сигнал сброса/старта ПЛИС)
 
 #define SPI_SCLK    (gpio_num_t)5
 #define SPI_MISO    (gpio_num_t)4
@@ -100,8 +101,8 @@ uint8_t* spi_master_rx_buf;
 
 #define STACK_SIZE 2048
 
-#define RX_DIS_FREQ 61440000 //частота дискретизации приемника в плис Hz
-#define TX_DIS_FREQ 96000000 //частота дискретизации передатчика в плис Hz
+#define RX_DIS_FREQ 63000000 //частота дискретизации приемника в плис Hz
+#define TX_DIS_FREQ 63000000 //частота дискретизации передатчика в плис Hz
 
 //Arduino_DataBus *bus = new Arduino_ESP32QSPI(LCD_CS,LCD_SCK,LCD_D0,LCD_D1,LCD_D2,LCD_D3);
 //Arduino_GFX *g = new Arduino_NV3041A(bus, LCD_RST, 0 /* rotation */, true /* IPS */);
