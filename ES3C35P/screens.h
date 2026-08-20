@@ -49,16 +49,43 @@ void draw_spectr(){//спектр
      }
 }
 
+
 void draw_waterfall(){ //отображаем массив буферов fft для водопада
   static uint16_t marker[NUM_SAMPLE_BUF/2-9]={0};
   uint8_t y = 190;
   int x = 0;
+  int wp_width = NUM_SAMPLE_BUF / 2 - 9;
   for (int i=WP_LINE;i>0;i--){
     //вывод подготовленных строк водопада в видеобуфер
-    gfx.pushImage(x+xwin,i+y+ywin,NUM_SAMPLE_BUF/2-9,1,(uint16_t*)&wp[wp_num[i-1]][0]);
+    gfx.pushImage(x+xwin,i+y+ywin,wp_width,1,(uint16_t*)&wp[wp_num[i-1]][0]);
   }
   gfx.drawFastVLine(x+xwin+pos_fft,y+ywin+1,WP_LINE,YELLOW); //вертикальный маркер текущей частоты
 }
+/*
+void draw_waterfall(){ 
+  uint8_t y = 190;
+  int x = 0;
+  int wp_width = NUM_SAMPLE_BUF / 2 - 9; 
+  
+  uint16_t* sprite_ptr = (uint16_t*)gfx.getPointer();
+  int sprite_width = gfx.width(); 
+
+  // Быстрое, монолитное копирование строк из кольцевого буфера памяти в ОЗУ спрайта
+  for (int i = WP_LINE; i > 0; i--) {
+      int target_y = (i + y + ywin); 
+      int target_x = (x + xwin);
+      
+      uint16_t* dest = sprite_ptr + (target_y * sprite_width) + target_x;
+      // Используем wp_num[i-1] для чтения правильной строки из истории спектра
+      uint16_t* src = (uint16_t*)&wp[wp_num[i - 1]][0];
+
+      memcpy(dest, src, wp_width * sizeof(uint16_t));
+  }
+  
+  // Рисуем маркер частоты гетеродина ПЛИС поверх водопада
+  gfx.drawFastVLine(x + xwin + pos_fft, y + ywin + 1, WP_LINE, YELLOW); 
+}
+*/
 
 void draw_service(){
     const char* mod;const char* filtr;const char* tun;const char* type_fir;const char* step;
@@ -221,13 +248,13 @@ void drawinfo(){
       gfx.print(tp_y);
       //gfx.print(" ");gfx.print(a_heap);gfx.print("/");gfx.print(b_heap);
 }
-
+/*
 void scroll_wp(){ //сдвиг массива строк "водопада"
       uint8_t tmp = wp_num[WP_LINE-1];
       for (int i=WP_LINE-1;i>0;i--) {wp_num[i] = wp_num[i-1];}
       wp_num[0]=tmp;
 }
-
+*/
 void peak_down(){//плавно снижаем уровни спектра и панорамы
    for (int i=0;i<NUM_SAMPLE_BUF;i++){
         if (fft_inter[i]>limited_fft/2)fft_inter[i]-=limited_fft/20;
@@ -348,7 +375,8 @@ void x_display(){
    draw_waterfall(); //отобразить панораму
    screen_control();
    drawinfo(); //показать fps
-   if(txrx_mode==RX_MODE)scroll_wp();//сдвинуть панораму на 1 строку вниз
+   //if(txrx_mode==RX_MODE)scroll_wp();//сдвинуть панораму на 1 строку вниз
+   //scroll_wp();//сдвинуть панораму на 1 строку вниз
    peak_down();//инкремент показателей спектра и панорамы
 }
 

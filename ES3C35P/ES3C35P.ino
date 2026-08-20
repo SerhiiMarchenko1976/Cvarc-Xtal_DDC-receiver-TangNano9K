@@ -29,12 +29,15 @@
 
 void setup()
 {
+  delay(150); 
+  
+  
   pinMode(START_FPGA,OUTPUT);
   gpio_set_level(START_FPGA,0);
   pinMode(AP_ENABLE, OUTPUT);
   digitalWrite(AP_ENABLE, LOW);
    
-  //fw_loader(); //загрузка битстрима в плис из sd
+  
   lcd_init(1);
   get_conf();//восстанавливаем параметры
   buf_init();
@@ -64,21 +67,14 @@ void setup()
 
 void loop(void){
     cur_ms = millis();
-    
-    // 1. Опрашиваем тачскрин, энкодер и кнопки НА КАЖДОМ круге цикла loop()
-    // Это сделает управление трансивером ультра-отзывчивым и мгновенным!
-    screens(txrx_mode);
+    // 1. Тачскрин и кнопки опрашиваются ВСЕГДА и без задержек
     control();
     time_001();
     time1();
-    
-    // 2. Отрисовку дисплея выполняем строго по таймеру раз в 40 миллисекунд (~25 FPS)
-    
-        // Выводим готовый спрайт 
-        g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t*)gfx.getPointer());
-   
-    
-    // Расчет FPS (теперь он покажет реальную скорость работы логики интерфейса)
+    // 2. Отрисовка меню в ОЗУ спрайта
+    screens(txrx_mode);        
+    // Выводим монолитный буфер
+    g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t*)gfx.getPointer());
+    // Считаем FPS логики (теперь он покажет честную скорость работы кнопок и тача)
     fps = millis() - cur_ms;
 }
-

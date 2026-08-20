@@ -156,15 +156,16 @@ static void i2s_init()
     
 
 void lcd_init(int l){
-    g.Init();
-    g.Set_Rotation(1);
-
-    // ИСПРАВЛЕНО: Сначала создаем спрайт, затем задаем ему глубину цвета 16 бит (RGB565)
-    gfx.createSprite(g.Get_Width(), g.Get_Height());
-    gfx.setColorDepth(16); 
-    gfx.fillSprite(BLACK);
-
-    // Выводим первый чистый кадр по скоростной QSPI шине
+  g.Init();
+  g.Set_Rotation(1);
+  
+  // Инициализируем спрайт-холст трансивера
+  gfx.createSprite(g.Get_Width(), g.Get_Height());
+  
+  // КРИТИЧЕСКИ ВАЖНО ДЛЯ ЦВЕТОВ: Включаем авторазворот байт (RGB <-> BGR) на уровне спрайта!
+  gfx.setSwapBytes(1); 
+  
+  gfx.fillSprite(BLACK);
     g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t*)gfx.getPointer());
     
     
@@ -175,14 +176,14 @@ void lcd_init(int l){
     //gfx.fillSprite(BLACK);
     g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
     //gfx.pushSprite(0,0);
-    gfx.setSwapBytes(1);
+                            //gfx.setSwapBytes(1);
   //gfx.begin(60000000);
   gfx.setTextWrap(false,false);
   //gfx.fillRect(0,0,480,320,BLACK);
   g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
   //gfx.pushSprite(0,0);gfx.pushSprite(0,0);
   ledcAttachChannel(LCD_BL, 2000, 8, 0);
-  ledcWrite(LCD_BL, 125);
+  ledcWrite(LCD_BL, 165);
   //pinMode(LCD_BL, OUTPUT);
   //digitalWrite(LCD_BL, l);
 }

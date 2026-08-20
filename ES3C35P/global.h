@@ -1,4 +1,6 @@
  #include "tp.h"
+ //#include <freertos/semphr.h>
+//extern SemaphoreHandle_t gfx_mutex;
 
 int i_tx,i_rx,a_heap,b_heap,av_level,mount;
 
@@ -111,10 +113,18 @@ uint8_t* spi_master_rx_buf;
 //TFT_eSPI* tft_dummy = (TFT_eSPI*)NULL;
 
 // 2. Инициализируем спрайт-холст напрямую через пустой родительский указатель
-TFT_eSPI* tft_dummy = (TFT_eSPI*)NULL;
-TFT_eSprite gfx = TFT_eSprite(tft_dummy); 
+//TFT_eSPI* tft_dummy = (TFT_eSPI*)NULL;
+//TFT_eSprite gfx = TFT_eSprite(tft_dummy); 
+//ST77922 g = ST77922();
 
-ST77922 g = ST77922();
+TFT_eSPI tft = TFT_eSPI();           // Возвращаем родительский объект для разметки памяти
+TFT_eSprite gfx = TFT_eSprite(&tft); // Привязываем спрайт к tft
+ST77922 g = ST77922();               // Наш реальный QSPI драйвер дисплея
+
+
+
+
+
 //TFT_eSprite gfx = TFT_eSprite(&g);
 
 //Arduino_GFX *gfx = new Arduino_Canvas(480 /* width */, 320 /* height */, g);
