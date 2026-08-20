@@ -2,83 +2,83 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cdc_sync.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cdc_sync.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic_interp.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic_interp.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cordic_rx.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cordic_rx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cordic_tx.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cordic_tx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fifo/fifo.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fifo/fifo.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/filter.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/filter.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/firinterp.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/firinterp.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_prom/gowin_prom.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_prom/gowin_prom.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_prom/gowin_prom_fir.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_prom/gowin_prom_fir.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_rpll/gowin_rpll.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_rpll/gowin_rpll.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_sdpb/Gowin_SDPB_36x64.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_sdpb/Gowin_SDPB_36x64.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/spi_module.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/spi_module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/transmitter.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/transmitter.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
    "Type" : "verilog"
   }
  ],
@@ -86,7 +86,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/impl/temp/rtl_parser.result",
+ "ResultFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/impl/temp/rtl_parser.result",
  "Top" : "top_trx",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"

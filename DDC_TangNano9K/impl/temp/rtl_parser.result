@@ -1,239 +1,239 @@
 [
  {
-  "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+  "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
   "InstLine" : 1,
   "InstName" : "top_trx",
-  "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+  "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
   "ModuleLine" : 1,
   "ModuleName" : "top_trx",
   "SubInsts" : [
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 61,
     "InstName" : "pll_inst",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_rpll/gowin_rpll.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_rpll/gowin_rpll.v",
     "ModuleLine" : 10,
     "ModuleName" : "Gowin_rPLL"
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 87,
     "InstName" : "filter_inst",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/filter.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/filter.v",
     "ModuleLine" : 1,
     "ModuleName" : "filter"
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 95,
     "InstName" : "rx",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
     "ModuleLine" : 1,
     "ModuleName" : "Receiver",
     "SubInsts" : [
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 33,
       "InstName" : "cordic_rx",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cordic_rx.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cordic_rx.v",
       "ModuleLine" : 7,
       "ModuleName" : "cordic_rx"
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 57,
       "InstName" : "varcic_inst_SHARED",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
       "ModuleLine" : 8,
       "ModuleName" : "varcic",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        }
       ]
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 104,
       "InstName" : "cic_inst_SHARED",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
       "ModuleLine" : 1,
       "ModuleName" : "cic",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 60,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 120,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 69,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 91,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 60,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 120,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 69,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 91,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 60,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 120,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 69,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 91,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 60,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 120,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "InstLine" : 69,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic.v",
         "ModuleLine" : 91,
         "ModuleName" : "cic_comb1"
        }
       ]
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 139,
       "InstName" : "fir_coeffs_inst",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
       "ModuleLine" : 216,
       "ModuleName" : "fir_coeffs",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "InstLine" : 228,
         "InstName" : "fir_coeffs_rom_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_prom/gowin_prom_fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_prom/gowin_prom_fir.v",
         "ModuleLine" : 9,
         "ModuleName" : "Gowin_pROM_fir"
        }
       ]
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 151,
       "InstName" : "fir_inst_I",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
       "ModuleLine" : 8,
       "ModuleName" : "fir",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "InstLine" : 161,
         "InstName" : "internal_hardware_ram",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
         "ModuleLine" : 10,
         "ModuleName" : "Gowin_SP"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "InstLine" : 181,
         "InstName" : "fir_mac_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "ModuleLine" : 191,
         "ModuleName" : "fir_mac",
         "SubInsts" : [
          {
-          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
           "InstLine" : 202,
           "InstName" : "mult_24Sx24S_inst",
-          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
+          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
           "ModuleLine" : 9,
           "ModuleName" : "Gowin_MULT"
          }
@@ -242,34 +242,34 @@
       ]
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/receiver.v",
       "InstLine" : 162,
       "InstName" : "fir_inst_Q",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
       "ModuleLine" : 8,
       "ModuleName" : "fir",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "InstLine" : 161,
         "InstName" : "internal_hardware_ram",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_sp/gowin_sp_shift.v",
         "ModuleLine" : 10,
         "ModuleName" : "Gowin_SP"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "InstLine" : 181,
         "InstName" : "fir_mac_inst",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
         "ModuleLine" : 191,
         "ModuleName" : "fir_mac",
         "SubInsts" : [
          {
-          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fir.v",
+          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fir.v",
           "InstLine" : 202,
           "InstName" : "mult_24Sx24S_inst",
-          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
+          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_mult/gowin_mult.v",
           "ModuleLine" : 9,
           "ModuleName" : "Gowin_MULT"
          }
@@ -280,86 +280,86 @@
     ]
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 112,
     "InstName" : "done",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cdc_sync.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cdc_sync.v",
     "ModuleLine" : 29,
     "ModuleName" : "cdc_sync"
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 170,
     "InstName" : "tx",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/transmitter.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/transmitter.v",
     "ModuleLine" : 5,
     "ModuleName" : "Transmitter",
     "SubInsts" : [
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/transmitter.v",
       "InstLine" : 33,
       "InstName" : "fi",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/firinterp.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/firinterp.v",
       "ModuleLine" : 6,
       "ModuleName" : "FirInterp8",
       "SubInsts" : [
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/firinterp.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/firinterp.v",
         "InstLine" : 59,
         "InstName" : "fir_i",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_prom/gowin_prom.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_prom/gowin_prom.v",
         "ModuleLine" : 9,
         "ModuleName" : "Gowin_pROM"
        },
        {
-        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/firinterp.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/firinterp.v",
         "InstLine" : 79,
         "InstName" : "internal_bsram_block",
-        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/gowin_sdpb/Gowin_SDPB_36x64.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/gowin_sdpb/Gowin_SDPB_36x64.v",
         "ModuleLine" : 10,
         "ModuleName" : "Gowin_SDPB"
        }
       ]
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/transmitter.v",
       "InstLine" : 45,
       "InstName" : "in2",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cic_interp.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cic_interp.v",
       "ModuleLine" : 5,
       "ModuleName" : "CicInterpM5"
      },
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/transmitter.v",
       "InstLine" : 73,
       "InstName" : "cordic_inst",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/cordic_tx.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/cordic_tx.v",
       "ModuleLine" : 25,
       "ModuleName" : "cordic_tx"
      }
     ]
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 187,
     "InstName" : "spi",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/spi_module.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/spi_module.v",
     "ModuleLine" : 13,
     "ModuleName" : "spi_slave"
    },
    {
-    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/top_transceiver.v",
     "InstLine" : 201,
     "InstName" : "fifo_main",
-    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fifo/fifo.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fifo/fifo.v",
     "ModuleLine" : 640,
     "ModuleName" : "fifo",
     "SubInsts" : [
      {
-      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fifo/fifo.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fifo/fifo.v",
       "InstLine" : 665,
       "InstName" : "fifo_inst",
-      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/DDC_TangNano9K/src/fifo/fifo.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K/src/fifo/fifo.v",
       "ModuleLine" : 13,
       "ModuleName" : "~fifo.fifo"
      }
