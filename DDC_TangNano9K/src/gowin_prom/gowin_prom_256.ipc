@@ -1,0 +1,15 @@
+[General]
+ipc_version=4
+file=gowin_prom_256
+module=Gowin_pROM_256
+target_device=gw2ar18-000
+type=ram_prom
+version=1.0
+
+[Config]
+DEPTH=256
+LANG=0
+MEM_FILE=/home/tvl/Gowin/Projects/Transceiver/coeff_polyphase.mi
+READ=0
+RESET_MODE=true
+WIDTH=18

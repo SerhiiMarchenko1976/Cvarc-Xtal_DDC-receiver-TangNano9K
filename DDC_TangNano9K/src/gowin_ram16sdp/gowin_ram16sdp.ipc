@@ -1,0 +1,12 @@
+[General]
+ipc_version=4
+file=gowin_ram16sdp
+module=Gowin_RAM16SDP
+target_device=gw2ar18-000
+type=ssram_ram16sdp
+version=1.0
+
+[Config]
+DEPTH=64
+LANG=0
+WIDTH=36
