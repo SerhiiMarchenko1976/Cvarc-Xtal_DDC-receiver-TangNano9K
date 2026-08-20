@@ -103,7 +103,7 @@ uint8_t* spi_master_rx_buf;
 
 #define STACK_SIZE 2048
 
-#define RX_DIS_FREQ 63000000 //частота дискретизации приемника в плис Hz
+#define RX_DIS_FREQ  63000000 //частота дискретизации приемника в плис Hz
 #define TX_DIS_FREQ 63000000 //частота дискретизации передатчика в плис Hz
 
 //Arduino_DataBus *bus = new Arduino_ESP32QSPI(LCD_CS,LCD_SCK,LCD_D0,LCD_D1,LCD_D2,LCD_D3);
