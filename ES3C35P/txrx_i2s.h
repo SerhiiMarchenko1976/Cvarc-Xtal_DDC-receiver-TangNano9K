@@ -23,69 +23,69 @@ union SdrPacket40 {
     uint8_t bytes[5];     // Массив из 5 байт для DMA-передачи
 };
 
-// Функция для отправки одиночных команд (Частота, АТТ, УВЧ) в ПЛИС
+
 static void sdr_spi_send_register(uint8_t cmd_addr, uint32_t payload_data) {
-    union SdrPacket40 packet;
-    packet.reg.command = cmd_addr;
-    packet.reg.data = payload_data;
+    // Безопасная побайтовая запись в DMA указатель через явное приведение типов
+    *(spi_master_tx_buf + 0) = cmd_addr;
+    *(spi_master_tx_buf + 1) = (uint8_t)((payload_data >> 24) & 0xFF);
+    *(spi_master_tx_buf + 2) = (uint8_t)((payload_data >> 16) & 0xFF);
+    *(spi_master_tx_buf + 3) = (uint8_t)((payload_data >> 8) & 0xFF);
+    *(spi_master_tx_buf + 4) = (uint8_t)(payload_data & 0xFF);
     
-    // Разворот байт (Endianness) для Verilog ПЛИС
-    spi_master_tx_buf[0] = packet.bytes[4]; // Команда летит первой
-    spi_master_tx_buf[1] = packet.bytes[3];
-    spi_master_tx_buf[2] = packet.bytes[2];
-    spi_master_tx_buf[3] = packet.bytes[1];
-    spi_master_tx_buf[4] = packet.bytes[0];
-    
-    // Передаем строго 5 байт
+    // Отправляем строго 5 байт
     master.transfer(spi_master_tx_buf, spi_master_rx_buf, 5);
 }
+
+
+
 
 void io_fpga(){
     union SdrPacket40 packet;
     static bool ptt_from_fpga = false;
     
-    if (txrx_mode == RX_MODE) {
-        packet.reg.command = 0x00; // На приеме шлем пустую команду, просто забираем звук из FIFO
-        packet.reg.data = 0;
-    } else {
-        packet.reg.command = 0x03; // На передаче шлем команду 03 и звук микрофона
-        // Пакуем 16 бит IMAG и 16 бит REAL в 32-битное поле
-        uint32_t audio_word = 0;
-        audio_word |= (uint16_t)output_buffer[0].re; // Ваша текущая точка звука
-        audio_word |= ((uint32_t)(uint16_t)output_buffer[0].im << 16);
-        packet.reg.data = audio_word;
-    }
+    // ОБЯЗАТЕЛЬНО ОБЪЯВЛЯЕМ ПЕРЕМЕННЫЕ, чтобы не было ошибки компиляции scope!
+    int16_t rx_real_val = 0;
+    int16_t rx_imag_val = 0;
+    
+    // Берем текущий отсчет звука (для сквозного теста берем нулевой или текущий индекс)
+    packet.reg.command = 0x03; 
+    uint32_t audio_word = 0;
+    audio_word |= (uint16_t)output_buffer[0].re; 
+    audio_word |= ((uint32_t)(uint16_t)output_buffer[0].im << 16);
+    packet.reg.data = audio_word;
 
-    // Разворот байт для отправки в ПЛИС
-    spi_master_tx_buf[0] = packet.bytes[4];
-    spi_master_tx_buf[1] = packet.bytes[3];
-    spi_master_tx_buf[2] = packet.bytes[2];
-    spi_master_tx_buf[3] = packet.bytes[1];
-    spi_master_tx_buf[4] = packet.bytes[0];
+    // ИСПРАВЛЕНО: Прямая побайтовая запись значений (uint8_t) убирает ошибку invalid conversion!
+    *(spi_master_tx_buf + 0) = (uint8_t)(packet.reg.command); 
+    *(spi_master_tx_buf + 1) = (uint8_t)((packet.reg.data >> 24) & 0xFF);
+    *(spi_master_tx_buf + 2) = (uint8_t)((packet.reg.data >> 16) & 0xFF);
+    *(spi_master_tx_buf + 3) = (uint8_t)((packet.reg.data >> 8) & 0xFF);
+    *(spi_master_tx_buf + 4) = (uint8_t)(packet.reg.data & 0xFF);
 
-    // Передаем и принимаем строго 5 байт (40 бит) через DMA
+    // Передаем и принимаем 5 байт через DMA
     master.transfer(spi_master_tx_buf, spi_master_rx_buf, 5);
 
-    // Распаковываем принятые 40 бит ответа (Звук приема из FIFO ПЛИС)
+    // Сборка 40-битного ответа из MISO
     uint64_t rx_raw = 0;
-    rx_raw |= ((uint64_t)spi_master_rx_buf[0] << 32);
-    rx_raw |= ((uint64_t)spi_master_rx_buf[1] << 24);
-    rx_raw |= ((uint64_t)spi_master_rx_buf[2] << 16);
-    rx_raw |= ((uint64_t)spi_master_rx_buf[3] << 8);
-    rx_raw |= ((uint64_t)spi_master_rx_buf[4]);
+    rx_raw |= ((uint64_t)*(spi_master_rx_buf + 0) << 32);
+    rx_raw |= ((uint64_t)*(spi_master_rx_buf + 1) << 24);
+    rx_raw |= ((uint64_t)*(spi_master_rx_buf + 2) << 16);
+    rx_raw |= ((uint64_t)*(spi_master_rx_buf + 3) << 8);
+    rx_raw |= ((uint64_t)*(spi_master_rx_buf + 4));
 
     ptt_from_fpga = (bool)((rx_raw >> 39) & 0x01);
-    if (ptt_from_fpga) {
-              txrx_mode = TX_MODE;
-          } else {
-              txrx_mode = RX_MODE;
-          }
+    ptt_esp = !digitalRead(BOARD_BOOT_BTN); // Ультра-лаконичный опрос кнопки BOOT!
+          
+    if (ptt_from_fpga || ptt_esp) {
+        txrx_mode = TX_MODE;
+        rx_imag_val = 0;        
+        rx_real_val = 0;
+    } else {
+        txrx_mode = RX_MODE;
+        rx_imag_val = (int16_t)(rx_raw & 0xFFFF);        
+        rx_real_val = (int16_t)((rx_raw >> 16) & 0xFFFF); 
+    }
 
-    // Раскладываем по буферам I/Q сэмплы
-    int16_t rx_imag_val = (int16_t)(rx_raw & 0xFFFF);        // Младшие 16 бит
-    int16_t rx_real_val = (int16_t)((rx_raw >> 16) & 0xFFFF); // Следующие 16 бит
-
-    // Заполняем ваш массив input_buffer для обработки и вывода в I2S
+    // Наполняем входной буфер I2S кодека эхо-звуком
     for (int i = 0; i < NUM_SAMPLE_BUF; i++) {
         input_buffer[i].re = (int32_t)rx_real_val; 
         input_buffer[i].im = (int32_t)rx_imag_val;
@@ -94,18 +94,16 @@ void io_fpga(){
 
 
 
+
 static void txrx_in( void * args)
 {
     size_t r_bytes = 0;
     int size_buf = NUM_SAMPLE_BUF*sizeof(COMPLEX_int);
-    //uint32_t srate = 0b10;
-    static uint32_t last_rx_freq = 0;
-    static uint32_t last_tx_freq = 0;
-    static uint8_t  last_peripheral = 0;
+  
   
 
   while(1) {
-    // 1. СТРОГО СИНХРОНИЗИРУЕМСЯ ПО СЕМАФОРУ КОДЕКА (Как в вашем оригинале)
+    // 1. СТРОГО СИНХРОНИЗИРУЕМСЯ ПО СЕМАФОРУ КОДЕКА 
     xSemaphoreTake(xIN, portMAX_DELAY);
 
     // 2. АВТОМАТИЧЕСКАЯ УВЯЗКА ЧАСТОТЫ ДИСКРЕТИЗАЦИИ S_RATE
@@ -149,16 +147,33 @@ static void txrx_in( void * args)
         workbuf_in[i].im = workbuf_tmp[i].im;
     }
 
-    // 5. СКОРОСТНОЙ ПОТОКОВЫЙ ОБМЕН ЗВУКОМ НА 40 БИТ
+        // 5. Чтение встроенного микрофона ES8311
+    i2s_channel_read(TX_chan_rx, &input_buffer_m, NUM_SAMPLE_BUF*sizeof(COMPLEX_int), &r_bytes, portMAX_DELAY);
+    
+    // Пакуем считанный микрофон в буфер отправки ПЛИС
+    for (int i=0; i<NUM_SAMPLE_BUF; i++) { 
+       output_buffer[i].re = output_buffer[i].im = input_buffer_m[i].re;
+    }
+
+    // 6. СКОРОСТНОЙ ПОТОКОВЫЙ ОБМЕН ЗВУКОМ НА 40 БИТ
     io_fpga();
 
     // Разбираем флаг тангенты PTT, если он возвращается из io_fpga
     // (Если ptt_from_fpga_local равен true, вы можете переключать режим txrx_mode)
 
-    // 6. НАПРАВЛЯЕМ ЗВУК В ТРАКТЫ ОБРАБОТКИ И БПФ (Ваш чистый оригинальный цикл)
+       // 7. Раскладываем квадратуры для БПФ и Тракта Водопада
     for (int i=0; i<NUM_SAMPLE_BUF; i++) {
-        int16_t sample_re = (int16_t)input_buffer[i].re;
-        int16_t sample_im = (int16_t)input_buffer[i].im;
+        int16_t sample_re, sample_im;
+        
+        if(txrx_mode == TX_MODE){
+            // Если зажата кнопка передачи - выводим на водопад спектр НАШЕГО МИКРОФОНА (Передача)
+            sample_re = (int16_t)output_buffer[i].re;
+            sample_im = (int16_t)output_buffer[i].im;
+        } else {
+            // На приеме - выводим на водопад спектр того, что прилетело из перемычки (Приём)
+            sample_re = (int16_t)input_buffer[i].re;
+            sample_im = (int16_t)input_buffer[i].im;
+        }
 
         workbuf_in[i+NUM_SAMPLE_BUF].re = workbuf_tmp[i].re = (float)sample_re;
         workbuf_in[i+NUM_SAMPLE_BUF].im = workbuf_tmp[i].im = (float)sample_im;
@@ -167,12 +182,13 @@ static void txrx_in( void * args)
         fft_in[i].im = (float)sample_im;
     }
 
+ 
     // Отправляем спектр на водопад дисплея
     //scroll_wp();//сдвинуть панораму на 1 строку вниз
     fft_for_display((float*)&fft_in);
 
-    // 7. ПЕРЕДАЧА БУФЕРОВ НА ДЕМОДУЛЯЦИЮ (Строго ваш оригинальный unrolled-цикл с шагом i+=8)
-    if(txrx_mode==RX_MODE){
+        // 8. Передача буферов на демодуляцию во FreeRTOS (Только в режиме приёма)
+    if(txrx_mode == RX_MODE){
       for(int i=0; i<NUM_FFT_BUF; i+=8) {
         workbuf_dsp[i].re = workbuf_in[i].re;
         workbuf_dsp[i].im = workbuf_in[i].im;
@@ -189,20 +205,23 @@ static void txrx_in( void * args)
         workbuf_dsp[i+6].re = workbuf_in[i+6].re;
         workbuf_dsp[i+6].im = workbuf_in[i+6].im;
         workbuf_dsp[i+7].re = workbuf_in[i+7].re;
-        workbuf_dsp[i+7].im = workbuf_in[i+7].im;
+        workbuf_dsp[i+7].im = workbuf_in[i+7].im; //log(1); // Заглушка
       }
       xSemaphoreGive(xDSP);
-    }
-
-    if(txrx_mode==TX_MODE){
-      i2s_channel_read(TX_chan_rx, &input_buffer_m, NUM_SAMPLE_BUF*sizeof(COMPLEX_int), &r_bytes, portMAX_DELAY);
+    
+    
+    } else {
+    
+      // На передаче DSP-обработку приёма пропускаем, так как звук выключен
       for (int i=0; i<NUM_SAMPLE_BUF; i++) { 
-       workbuf_re[i] = workbuf_im[i] = (float)((input_buffer_m[i].re));
+         workbuf_re[i] = (float)(output_buffer[i].re);
+         workbuf_im[i] = (float)(output_buffer[i].im);
       }
       xSemaphoreGive(xDSP);
     }
   }
 }
+
 
 
 

@@ -184,6 +184,10 @@ void lcd_init(int l){
   //gfx.pushSprite(0,0);gfx.pushSprite(0,0);
   ledcAttachChannel(LCD_BL, 2000, 8, 0);
   ledcWrite(LCD_BL, 165);
+  // Кнопка BOOT на плате ESP32-S3
+  // Кнопка BOOT на плате ESP32-S3
+  //#define BOARD_BOOT_BTN 0
+  pinMode(BOARD_BOOT_BTN, INPUT);
   //pinMode(LCD_BL, OUTPUT);
   //digitalWrite(LCD_BL, l);
 }

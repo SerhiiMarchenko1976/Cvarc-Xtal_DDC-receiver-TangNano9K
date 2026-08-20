@@ -1,4 +1,6 @@
+ 
  #include "tp.h"
+
  //#include <freertos/semphr.h>
 //extern SemaphoreHandle_t gfx_mutex;
 
@@ -22,6 +24,15 @@ uint8_t* spi_master_rx_buf;
 #define SPI_MOSI    (gpio_num_t)3
 #define SPI_SS      (gpio_num_t)2
 #define START_FPGA  (gpio_num_t)6
+// Кнопка BOOT на плате ESP32-S3
+#define BOARD_BOOT_BTN 0
+bool ptt_esp = false; // Флаг передачи с кнопки BOOT
+int16_t rx_imag_val = 0;        
+int16_t rx_real_val = 0;
+  //uint32_t srate = 0b10;
+    static uint32_t last_rx_freq = 0;
+    static uint32_t last_tx_freq = 0;
+    static uint8_t  last_peripheral = 0;
 
 //Encoder pins
 #define ROTARY_ENCODER_A_PIN      (gpio_num_t)(43) //tx
@@ -198,6 +209,7 @@ uint16_t wp_value[NUM_SAMPLE_BUF/2];
 uint8_t wp_num[WP_LINE];          //массив для хранения порядка номеров строк водопада для вывода на экран
 float  fft_r[NUM_SAMPLE_BUF];       //рабочий fft-буфер
 COMPLEX fft_in[NUM_SAMPLE_BUF];   //приемный fft-буфер
+
 float  fft_inter[NUM_SAMPLE_BUF]; //отображаемый fft буфер (все элементы постоянно уменьшаются)
 
 #define PCH (NUM_SAMPLE_BUF/4) //середина отображаемомго спектра
