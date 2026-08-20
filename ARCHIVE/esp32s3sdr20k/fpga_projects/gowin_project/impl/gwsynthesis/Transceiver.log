@@ -1,0 +1,85 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cdc_sync.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic_interp.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_rx.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_tx.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fifo/fifo.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/filter.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/firinterp.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/receiver.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/spi_module.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v'
+Undeclared symbol 'clk10M', assumed default net type 'wire'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":61)
+Undeclared symbol 'clk100K', assumed default net type 'wire'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":62)
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/transmitter.v'
+Analyzing Verilog file '/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/varcic.v'
+Compiling module 'top_trx'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":3)
+Compiling module 'Gowin_rPLL'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v":9)
+Compiling module 'filter'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/filter.v":1)
+WARN  (EX3073) : Port 'test' remains unconnected for this instance("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/receiver.v":127)
+WARN  (EX3073) : Port 'test' remains unconnected for this instance("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/receiver.v":138)
+Compiling module 'Receiver'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/receiver.v":3)
+Compiling module 'cordic_rx'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_rx.v":7)
+Compiling module 'varcic(STAGES=4,DECIMATION=32,ACC_WIDTH=50,OUT_WIDTH=24)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/varcic.v":8)
+Compiling module 'cic_integrator(WIDTH=50)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/varcic.v":131)
+Compiling module 'cic_comb(WIDTH=50)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/varcic.v":150)
+Compiling module 'cic(STAGES=6,DECIMATION=10,IN_WIDTH=24,ACC_WIDTH=60)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic.v":1)
+Compiling module 'cic_integrator1(WIDTH=60)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic.v":123)
+Compiling module 'cic_comb1(WIDTH=60)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic.v":97)
+Compiling module 'fir_coeffs'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v":138)
+Compiling module 'Gowin_pROM_fir'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v":9)
+Compiling module 'fir(OUT_WIDTH=24)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v":8)
+Compiling module 'shift_reg'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v":162)
+Extracting RAM for identifier 'ram_reg'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v":169)
+Compiling module 'fir_mac'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v":115)
+Compiling module 'Gowin_MULT'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v":9)
+Compiling module 'cdc_sync'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cdc_sync.v":29)
+Compiling module 'cdc_sync(SIZE=64)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cdc_sync.v":29)
+Compiling module 'Transmitter'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/transmitter.v":4)
+Compiling module 'FirInterp8'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/firinterp.v":6)
+Compiling module 'Gowin_pROM'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v":9)
+Compiling module 'Gowin_RAM16SDP'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v":9)
+Compiling module 'CicInterpM5(RRRR=250,GBITS=34)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic_interp.v":5)
+Compiling module 'cordic_tx(OUT_WIDTH=16)'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_tx.v":25)
+WARN  (EX3779) : 'n_ptt' should be on the sensitivity list("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":139)
+WARN  (EX3779) : 'n_tune' should be on the sensitivity list("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":139)
+WARN  (EX3779) : 'n_cw_key' should be on the sensitivity list("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":139)
+WARN  (EX3779) : 'rx_real' should be on the sensitivity list("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":139)
+WARN  (EX3779) : 'rx_imag' should be on the sensitivity list("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v":139)
+Compiling module 'spi_slave'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/spi_module.v":13)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/spi_module.v":42)
+Compiling module 'fifo'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fifo/fifo.v":680)
+Compiling module '**'("/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fifo/fifo.v":0)
+NOTE  (EX0101) : Current top module is "top_trx"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/impl/gwsynthesis/Transceiver.vg" completed
+WARN  (CK3000) : Can't calculate clocks' relationship between: "clk61" and "_spi_done"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "clk61" and "test_d"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n50_4" and "clk61"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "_spi_done" and "clk61"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "SPI_SCK" and "clk61"
+[100%] Generate report file "/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/impl/gwsynthesis/Transceiver_syn.rpt.html" completed
+GowinSynthesis finish

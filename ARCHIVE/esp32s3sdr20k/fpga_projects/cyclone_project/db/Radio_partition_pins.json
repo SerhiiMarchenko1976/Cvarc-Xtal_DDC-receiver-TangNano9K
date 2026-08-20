@@ -1,0 +1,229 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "dac_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "dac_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "filter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "filter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "filter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "filter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "filter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led",
+					"strict" : false
+				},
+				{
+					"name" : "test",
+					"strict" : false
+				},
+				{
+					"name" : "clock_61M",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SS",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SCK",
+					"strict" : false
+				},
+				{
+					"name" : "n_ptt",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[7]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[6]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[5]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[4]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "adc_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "n_tune",
+					"strict" : false
+				},
+				{
+					"name" : "n_cw_key",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_l[4]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_l[3]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_l[2]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_l[1]",
+					"strict" : false
+				},
+				{
+					"name" : "n_buttons_l[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

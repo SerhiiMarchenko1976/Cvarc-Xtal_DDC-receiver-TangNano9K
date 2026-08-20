@@ -1,0 +1,30 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2AR-18" pn="GW2AR-LV18QN88C8/I7">gw2ar18-000</Device>
+    <FileList>
+        <File path="src/cdc_sync.v" type="file.verilog" enable="1"/>
+        <File path="src/cic.v" type="file.verilog" enable="1"/>
+        <File path="src/cic_interp.v" type="file.verilog" enable="1"/>
+        <File path="src/cordic_rx.v" type="file.verilog" enable="1"/>
+        <File path="src/cordic_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo/fifo.v" type="file.verilog" enable="1"/>
+        <File path="src/filter.v" type="file.verilog" enable="1"/>
+        <File path="src/fir.v" type="file.verilog" enable="1"/>
+        <File path="src/firinterp.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_mult/gowin_mult.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_prom/gowin_prom.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_prom/gowin_prom_fir.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_ram16sdp/gowin_ram16sdp.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/gowin_rpll.v" type="file.verilog" enable="1"/>
+        <File path="src/receiver.v" type="file.verilog" enable="1"/>
+        <File path="src/spi_module.v" type="file.verilog" enable="1"/>
+        <File path="src/top_transceiver.v" type="file.verilog" enable="1"/>
+        <File path="src/transmitter.v" type="file.verilog" enable="1"/>
+        <File path="src/varcic.v" type="file.verilog" enable="1"/>
+        <File path="src/Transceiver.cst" type="file.cst" enable="1"/>
+        <File path="src/Transceiver.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

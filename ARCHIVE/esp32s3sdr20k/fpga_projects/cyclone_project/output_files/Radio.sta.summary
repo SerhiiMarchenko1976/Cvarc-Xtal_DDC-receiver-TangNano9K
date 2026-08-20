@@ -1,0 +1,281 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -7.279
+TNS   : -315.934
+
+Type  : Slow 1200mV 85C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -6.838
+TNS   : -33.194
+
+Type  : Slow 1200mV 85C Model Setup 'clock_61M'
+Slack : -5.309
+TNS   : -492.863
+
+Type  : Slow 1200mV 85C Model Setup 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -4.514
+TNS   : -135.941
+
+Type  : Slow 1200mV 85C Model Setup 'SPI_SCK'
+Slack : -4.206
+TNS   : -435.064
+
+Type  : Slow 1200mV 85C Model Setup 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -4.053
+TNS   : -382.664
+
+Type  : Slow 1200mV 85C Model Setup 'cdc_sync:done|sigb[0]'
+Slack : -4.006
+TNS   : -487.017
+
+Type  : Slow 1200mV 85C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.247
+TNS   : -0.247
+
+Type  : Slow 1200mV 85C Model Hold 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : 0.408
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_61M'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'cdc_sync:done|sigb[0]'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SPI_SCK'
+Slack : 0.530
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Transmitter:tx|FirInterp8:fi|req'
+Slack : 2.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 3.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clock_61M'
+Slack : 12.599
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clock_61M'
+Slack : 2.097
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'cdc_sync:done|sigb[0]'
+Slack : -3.201
+TNS   : -575.785
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -3.201
+TNS   : -415.360
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SPI_SCK'
+Slack : -3.000
+TNS   : -300.400
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -1.487
+TNS   : -47.584
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.138
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_61M'
+Slack : 7.559
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 40.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -6.444
+TNS   : -277.849
+
+Type  : Slow 1200mV 0C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -6.085
+TNS   : -29.643
+
+Type  : Slow 1200mV 0C Model Setup 'clock_61M'
+Slack : -4.813
+TNS   : -458.719
+
+Type  : Slow 1200mV 0C Model Setup 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -4.554
+TNS   : -137.610
+
+Type  : Slow 1200mV 0C Model Setup 'SPI_SCK'
+Slack : -3.825
+TNS   : -399.187
+
+Type  : Slow 1200mV 0C Model Setup 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -3.723
+TNS   : -347.851
+
+Type  : Slow 1200mV 0C Model Setup 'cdc_sync:done|sigb[0]'
+Slack : -3.692
+TNS   : -443.017
+
+Type  : Slow 1200mV 0C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.366
+TNS   : -0.366
+
+Type  : Slow 1200mV 0C Model Hold 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : 0.395
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'cdc_sync:done|sigb[0]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_61M'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SPI_SCK'
+Slack : 0.491
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Transmitter:tx|FirInterp8:fi|req'
+Slack : 2.269
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 2.974
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clock_61M'
+Slack : 12.827
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clock_61M'
+Slack : 1.905
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'cdc_sync:done|sigb[0]'
+Slack : -3.201
+TNS   : -575.785
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -3.201
+TNS   : -415.360
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SPI_SCK'
+Slack : -3.000
+TNS   : -300.400
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -1.487
+TNS   : -47.584
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.138
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_61M'
+Slack : 7.583
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 40.388
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.467
+TNS   : -156.344
+
+Type  : Fast 1200mV 0C Model Setup 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -3.201
+TNS   : -15.647
+
+Type  : Fast 1200mV 0C Model Setup 'clock_61M'
+Slack : -2.410
+TNS   : -218.092
+
+Type  : Fast 1200mV 0C Model Setup 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -2.104
+TNS   : -62.826
+
+Type  : Fast 1200mV 0C Model Setup 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -1.295
+TNS   : -99.899
+
+Type  : Fast 1200mV 0C Model Setup 'SPI_SCK'
+Slack : -1.205
+TNS   : -79.581
+
+Type  : Fast 1200mV 0C Model Setup 'cdc_sync:done|sigb[0]'
+Slack : -1.188
+TNS   : -130.268
+
+Type  : Fast 1200mV 0C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_61M'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'cdc_sync:done|sigb[0]'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SPI_SCK'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Transmitter:tx|FirInterp8:fi|req'
+Slack : 0.849
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 1.618
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clock_61M'
+Slack : 14.656
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clock_61M'
+Slack : 0.932
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SPI_SCK'
+Slack : -3.000
+TNS   : -290.704
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'cdc_sync:done|sigb[0]'
+Slack : -1.000
+TNS   : -295.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Receiver:rx|fir:fir_inst_I|out_strobe'
+Slack : -1.000
+TNS   : -224.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Transmitter:tx|FirInterp8:fi|req'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.816
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_61M'
+Slack : 7.346
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'prx|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 40.474
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,218 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera MegaCore Function License Agreement, or other
+# applicable license agreement, including, without limitation,
+# that your use is for the sole purpose of programming logic
+# devices manufactured by Altera and sold by Altera or its
+# authorized distributors.  Please refer to the applicable
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 15.1.1 Build 189 12/02/2015 SJ Standard Edition
+# Date created = 15:16:55  December 02, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Radio_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:25:28  DECEMBER 02, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_E4 -to led
+set_location_assignment PIN_AB11 -to clock_61M
+set_location_assignment PIN_R2 -to test
+set_location_assignment PIN_M22 -to SPI_MISO
+set_location_assignment PIN_N22 -to SPI_MOSI
+set_location_assignment PIN_P22 -to SPI_SCK
+set_location_assignment PIN_R22 -to SPI_SS
+set_location_assignment PIN_M20 -to adc_data[0]
+set_location_assignment PIN_N19 -to adc_data[1]
+set_location_assignment PIN_N20 -to adc_data[2]
+set_location_assignment PIN_B21 -to adc_data[3]
+set_location_assignment PIN_B22 -to adc_data[4]
+set_location_assignment PIN_C21 -to adc_data[5]
+set_location_assignment PIN_C22 -to adc_data[6]
+set_location_assignment PIN_D21 -to adc_data[7]
+set_location_assignment PIN_D22 -to adc_data[8]
+set_location_assignment PIN_E21 -to adc_data[9]
+set_location_assignment PIN_E22 -to adc_data[10]
+set_location_assignment PIN_F21 -to adc_data[11]
+
+# Classic Timing Assignments
+# ==========================
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name TOP_LEVEL_ENTITY radio
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE EP4CE15F23C8
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+
+# Assembler Assignments
+# =====================
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name ENABLE_OCT_DONE OFF
+
+# Design Assistant Assignments
+# ============================
+#set_global_assignment -name ENABLE_DA_RULE "C101, C102, C103, C104, C105, C106, R101, R102, R103, R104, R105, T101, T102, A101, A102, A103, A104, A105, A106, A107, A108, A109, A110, S101, S102, S103, S104, D101, D102, D103, H101, H102, M101, M102, M103, M104, M105"
+
+# Power Estimation Assignments
+# ============================
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+# Advanced I/O Timing Assignments
+# ===============================
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+
+# start EDA_TOOL_SETTINGS(eda_blast_fpga)
+# ---------------------------------------
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+
+# end EDA_TOOL_SETTINGS(eda_blast_fpga)
+# -------------------------------------
+
+# -------------------
+# start ENTITY(radio)
+
+# Fitter Assignments
+# ==================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dac_clk
+
+# start LOGICLOCK_REGION(Root Region)
+# -----------------------------------
+
+# LogicLock Region Assignments
+# ============================
+
+# end LOGICLOCK_REGION(Root Region)
+# ---------------------------------
+
+# start DESIGN_PARTITION(Top)
+# ---------------------------
+
+# Incremental Compilation Assignments
+# ===================================
+
+# end DESIGN_PARTITION(Top)
+# -------------------------
+
+# end ENTITY(radio)
+# -----------------
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_location_assignment PIN_A20 -to filter[0]
+set_location_assignment PIN_A19 -to filter[1]
+set_location_assignment PIN_A18 -to filter[2]
+set_location_assignment PIN_A17 -to filter[3]
+set_location_assignment PIN_A16 -to filter[4]
+set_location_assignment PIN_A15 -to p_att[0]
+set_location_assignment PIN_A14 -to p_att[1]
+set_location_assignment PIN_A13 -to p_att[2]
+set_location_assignment PIN_A10 -to p_att[3]
+set_location_assignment PIN_A9 -to p_att[4]
+set_location_assignment PIN_A8 -to p_att[5]
+set_location_assignment PIN_L22 -to start
+set_location_assignment PIN_A5 -to n_ptt
+set_location_assignment PIN_B20 -to dac_clk
+set_location_assignment PIN_B17 -to dac_data[11]
+set_location_assignment PIN_B19 -to dac_data[13]
+set_location_assignment PIN_B18 -to dac_data[12]
+set_location_assignment PIN_B16 -to dac_data[10]
+set_location_assignment PIN_B15 -to dac_data[9]
+set_location_assignment PIN_B14 -to dac_data[8]
+set_location_assignment PIN_B13 -to dac_data[7]
+set_location_assignment PIN_B10 -to dac_data[6]
+set_location_assignment PIN_B9 -to dac_data[5]
+set_location_assignment PIN_B8 -to dac_data[4]
+set_location_assignment PIN_B7 -to dac_data[3]
+set_location_assignment PIN_B6 -to dac_data[2]
+set_location_assignment PIN_B5 -to dac_data[1]
+set_location_assignment PIN_C4 -to dac_data[0]
+set_location_assignment PIN_B4 -to level_pwm
+set_global_assignment -name VERILOG_FILE mult_16x16_uns.v
+set_global_assignment -name VERILOG_FILE profile.v
+set_global_assignment -name VERILOG_FILE Radio.v
+set_global_assignment -name VERILOG_FILE cdc_sync.v
+set_global_assignment -name VERILOG_FILE firinterp.v
+set_global_assignment -name QIP_FILE pll_rx.qip
+set_global_assignment -name VERILOG_FILE transmitter.v
+set_global_assignment -name VERILOG_FILE receiver.v
+set_global_assignment -name QIP_FILE PLL10.qip
+set_global_assignment -name VERILOG_FILE sound_codec.v
+set_global_assignment -name VERILOG_FILE reset.v
+set_global_assignment -name VERILOG_FILE spi_module.v
+set_global_assignment -name VERILOG_FILE i2s_module.v
+set_global_assignment -name VERILOG_FILE cordic_rx.v
+set_global_assignment -name VERILOG_FILE firfilt.v
+set_global_assignment -name VERILOG_FILE firromH.v
+set_global_assignment -name QIP_FILE firram36I.qip
+set_global_assignment -name QIP_FILE firromI.qip
+set_global_assignment -name VERILOG_FILE cordic_tx.v
+set_global_assignment -name VERILOG_FILE varcic.v
+set_global_assignment -name VERILOG_FILE memcic.v
+set_global_assignment -name QIP_FILE memcic_ram.qip
+set_global_assignment -name QIP_FILE fir_coeffs_rom.qip
+set_global_assignment -name QIP_FILE mult_24Sx24S.qip
+set_global_assignment -name QIP_FILE fir_shiftreg.qip
+set_global_assignment -name VERILOG_FILE cic_interp.v
+set_global_assignment -name QIP_FILE fifo.qip
+set_global_assignment -name VERILOG_FILE filter.v
+set_global_assignment -name VERILOG_FILE gain.v
+set_location_assignment PIN_C3 -to n_cw_key
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

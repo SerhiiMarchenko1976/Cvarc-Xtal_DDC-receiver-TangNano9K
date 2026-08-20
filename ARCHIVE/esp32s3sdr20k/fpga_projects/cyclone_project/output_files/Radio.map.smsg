@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at Radio.v(111): always construct contains both blocking and non-blocking assignments File: /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/cyclone_project/Radio.v Line: 111
+Info (10281): Verilog HDL Declaration information at firinterp.v(23): object "rAddr" differs only in case from object "raddr" in the same scope File: /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/cyclone_project/firinterp.v Line: 23
+Warning (10268): Verilog HDL information at sound_codec.v(86): always construct contains both blocking and non-blocking assignments File: /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/cyclone_project/sound_codec.v Line: 86
+Warning (10268): Verilog HDL information at i2s_module.v(24): always construct contains both blocking and non-blocking assignments File: /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/cyclone_project/i2s_module.v Line: 24

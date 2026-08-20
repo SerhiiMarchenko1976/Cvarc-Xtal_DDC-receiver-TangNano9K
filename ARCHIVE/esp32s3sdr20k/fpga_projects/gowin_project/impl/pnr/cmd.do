@@ -1,0 +1,12 @@
+-d /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/impl/gwsynthesis/Transceiver.vg
+-p GW2AR-18-QFN88-8
+-pn GW2AR-LV18QN88C8/I7
+-cst /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/Transceiver.cst
+-cfg /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/impl/pnr/device.cfg
+-sdc /home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/Transceiver.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-route_maxfan 23

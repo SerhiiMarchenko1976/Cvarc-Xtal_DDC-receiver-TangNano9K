@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Jan  4 22:33:00 2025
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : Radio
+Top-level Entity Name : radio
+Family : Cyclone IV E
+Device : EP4CE15F23C8
+Timing Models : Final
+Total logic elements : 7,995 / 15,408 ( 52 % )
+    Total combinational functions : 6,485 / 15,408 ( 42 % )
+    Dedicated logic registers : 5,870 / 15,408 ( 38 % )
+Total registers : 5870
+Total pins : 63 / 344 ( 18 % )
+Total virtual pins : 0
+Total memory bits : 165,916 / 516,096 ( 32 % )
+Embedded Multiplier 9-bit elements : 18 / 112 ( 16 % )
+Total PLLs : 1 / 4 ( 25 % )

@@ -1,0 +1,7 @@
+{
+	"common_dir" : "/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/FPGA/",
+	"acds_version" : "Version 15.1.1",
+	"platform" : "linux",
+	"os" : "Fedora Core",
+	"qpf" : "Transceiver.qpf"
+}

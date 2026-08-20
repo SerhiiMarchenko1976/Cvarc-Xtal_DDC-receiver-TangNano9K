@@ -1,0 +1,3 @@
+v1
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Receiver:rx|fir:fir_inst_Q|fir_mac:fir_mac_inst|mult_24Sx24S:mult_24Sx24S_inst|lpm_mult:lpm_mult_component|mult_okp:auto_generated|mac_mult5,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Receiver:rx|fir:fir_inst_I|fir_mac:fir_mac_inst|mult_24Sx24S:mult_24Sx24S_inst|lpm_mult:lpm_mult_component|mult_okp:auto_generated|mac_mult5,

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xsi:noNamespaceSchemaLocation="Project.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version current="2" valid="1" read="1"/>
+  <Format>Project</Format>
+  <Header>
+    <Program name="TopoR" version="5.1"/>
+    <GUID>{1DA22769-F679-4038-AF0D-F139F5D3B804}</GUID>
+    <Copyright></Copyright>
+    <Annotation>Project file</Annotation>
+    <ParentDocument/>
+    <ChangeLog/>
+  </Header>
+  <Document>
+    <LocalLibrary />
+    <Pcb>
+    </Pcb>
+    <ARouteSessions>
+    </ARouteSessions>
+  </Document>
+</Project>

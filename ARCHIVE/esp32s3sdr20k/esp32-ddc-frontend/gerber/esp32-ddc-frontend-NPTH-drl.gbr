@@ -1,0 +1,15 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.3-alt0.p10*%
+%TF.CreationDate,2024-12-28T11:01:42+07:00*%
+%TF.ProjectId,esp32-ddc-frontend,65737033-322d-4646-9463-2d66726f6e74,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,NonPlated,1,2,NPTH*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.3-alt0.p10) date 2024-12-28 11:01:42*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 APERTURE END LIST*
+M02*

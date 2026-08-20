@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Power Analysis Report</title>
+<style type="text/css">
+body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
+div#main_wrapper { width: 100%; }
+div#content { margin-left: 350px; margin-right: 30px; }
+div#catalog_wrapper {position: fixed; top: 30px; width: 350px; float: left; }
+div#catalog ul { list-style-type: none; }
+div#catalog li { text-align: left; list-style-type:circle; color: #0084ff; margin-top: 3px; margin-bottom: 3px; }
+div#catalog a { display:inline-block; text-decoration: none; color: #0084ff; font-weight: bold; padding: 3px; }
+div#catalog a:visited { color: #0084ff; }
+div#catalog a:hover { color: #fff; background: #0084ff; }
+hr { margin-top: 30px; margin-bottom: 30px; }
+h1, h3 { text-align: center; }
+h1 {margin-top: 50px; }
+table, th, td {white-space:pre;  border: 1px solid #aaa; }
+table { border-collapse:collapse; margin-top: 10px; margin-bottom: 20px; width: 100%; }
+th, td { padding: 5px 5px 5px 5px; }
+th { color: #fff; font-weight: bold; background-color: #0084ff; }
+table.summary_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.thermal_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.Configure_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.detail_table th.label {  min-width: 8%; width: 8%; }
+</style>
+</head>
+<body>
+<div id="main_wrapper">
+<div id="catalog_wrapper">
+<div id="catalog">
+<ul>
+<li><a href="#Message" style=" font-size: 16px;">Power Messages</a>
+</li>
+<li><a href="#Summary" style=" font-size: 16px;">Power Summary</a>
+<ul>
+<li><a href="#Power_Info" style=" font-size: 14px;">Power Information</a></li>
+<li><a href="#Thermal_Info" style=" font-size: 14px;">Thermal Information</a></li>
+<li><a href="#Configure_Info" style=" font-size: 14px;">Configure Information</a></li>
+<li><a href="#Supply_Summary" style=" font-size: 14px;">Supply Information</a></li>
+</ul>
+</li>
+<li><a href="#Detail" style=" font-size: 16px;">Power Details</a>
+<ul>
+<li><a href="#By_Block_Type" style=" font-size: 14px;">Power By Block Type</a></li>
+<li><a href="#By_Hierarchy" style=" font-size: 14px;">Power By Hierarchy</a></li>
+<li><a href="#By_Clock_Domain" style=" font-size: 14px;">Power By Clock Domain</a></li>
+</ul>
+</li>
+</ul>
+</div><!-- catalog -->
+</div><!-- catalog_wrapper -->
+<div id="content">
+<h1><a name="Message">Power Messages</a></h1>
+<table class="summary_table">
+<tr>
+<td class="label">Report Title</td>
+<td>Power Analysis Report</td>
+</tr>
+<tr>
+<td class="label">Design File</td>
+<td>/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/impl/gwsynthesis/Transceiver.vg</td>
+</tr>
+<tr>
+<td class="label">Physical Constraints File</td>
+<td>/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/Transceiver.cst</td>
+</tr>
+<tr>
+<td class="label">Timing Constraints File</td>
+<td>/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/Transceiver.sdc</td>
+</tr>
+<tr>
+<td class="label">Version</td>
+<td>V1.9.8.10</td>
+</tr>
+<tr>
+<td class="label">Part Number</td>
+<td>GW2AR-LV18QN88C8/I7</td>
+</tr>
+<tr>
+<td class="label">Device</td>
+<td>GW2AR-18</td>
+</tr>
+<tr>
+<td class="label">Created Time</td>
+<td>Sun Mar  2 16:07:36 2025
+</td>
+</tr>
+<tr>
+<td class="label">Legal Announcement</td>
+<td>Copyright (C)2014-2022 Gowin Semiconductor Corporation. All rights reserved.</td>
+</tr>
+</table>
+<h1><a name="Summary">Power Summary</a></h1>
+<h2><a name="Power_Info">Power Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Total Power (mW)</td>
+<td>420.001</td>
+</tr>
+<tr>
+<td class="label">Quiescent Power (mW)</td>
+<td>165.197</td>
+</tr>
+<tr>
+<td class="label">Dynamic Power (mW)</td>
+<td>254.804</td>
+</tr>
+</table>
+<h2><a name="Thermal_Info">Thermal Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Junction Temperature</td>
+<td>34.009</td>
+</tr>
+<tr>
+<td class="label">Theta JA</td>
+<td>21.450</td>
+</tr>
+<tr>
+<td class="label">Max Allowed Ambient Temperature</td>
+<td>75.991</td>
+</tr>
+</table>
+<h2><a name="Configure_Info">Configure Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Default IO Toggle Rate</td>
+<td>0.125</td>
+</tr>
+<td class="label">Default Remain Toggle Rate</td>
+<td>0.125</td>
+</tr>
+<tr>
+<td class="label">Use Vectorless Estimation</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Filter Glitches</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Related Vcd File</td>
+<td></td>
+</tr>
+<tr>
+<td class="label">Related Saif File</td>
+<td></td>
+</tr>
+<tr>
+<td class="label">Use Custom Theta JA</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Air Flow</td>
+<td>LFM_0</td>
+</tr>
+<tr>
+<td class="label">Heat Sink</td>
+<td>None</td>
+</tr>
+<tr>
+<td class="label">Use Custom Theta SA</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Board Thermal Model</td>
+<td>None</td>
+</tr>
+<tr>
+<td class="label">Use Custom Theta JB</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Ambient Temperature</td>
+<td>25.000
+</tr>
+</table>
+<h2><a name="Supply_Summary">Supply Information:</a></h2>
+<table class="summary_table">
+<tr>
+<th class="label">Voltage Source</th>
+<th class="label">Voltage</th>
+<th class="label">Dynamic Current(mA)</th>
+<th class="label">Quiescent Current(mA)</th>
+<th class="label">Power(mW)</th>
+</tr>
+<tr>
+<td>VCC</td>
+<td>1.000</td>
+<td>239.366</td>
+<td>102.823</td>
+<td>342.189</td>
+</tr>
+<tr>
+<td>VCCX</td>
+<td>2.500</td>
+<td>2.662</td>
+<td>23.366</td>
+<td>65.068</td>
+</tr>
+<tr>
+<td>VCCIO33</td>
+<td>3.300</td>
+<td>2.662</td>
+<td>1.200</td>
+<td>12.744</td>
+</tr>
+</table>
+<h1><a name="Detail">Power Details</a></h1>
+<h2><a name="By_Block_Type">Power By Block Type:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Block Type</th>
+<th class="label">Total Power(mW)</th>
+<th class="label">Static Power(mW)</th>
+<th class="label">Average Toggle Rate(millions of transitions/sec)</th>
+</tr>
+<tr>
+<td>Logic</td>
+<td>40.636</td>
+<td>NA</td>
+<td>9.357</td>
+</tr>
+<tr>
+<td>IO</td>
+<td>26.305
+<td>8.192
+<td>14.669
+</tr>
+<tr>
+<td>BSRAM</td>
+<td>135.946
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>PLL</td>
+<td>0.722
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DSP</td>
+<td>59.273
+<td>NA</td>
+<td>10.511
+</tr>
+</table>
+<h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Hierarchy Entity</th>
+<th class="label">Total Power(mW)</th>
+<th class="label">Block Dynamic Power(mW)</th>
+</tr>
+<tr>
+<td>top_trx</td>
+<td>236.577</td>
+<td>236.577(236.509)</td>
+<tr>
+<td>top_trx/cont/</td>
+<td>0.041</td>
+<td>0.041(0.000)</td>
+<tr>
+<td>top_trx/done/</td>
+<td>0.005</td>
+<td>0.005(0.000)</td>
+<tr>
+<td>top_trx/fifo_main/</td>
+<td>114.313</td>
+<td>114.313(114.313)</td>
+<tr>
+<td>top_trx/fifo_main/fifo_inst/</td>
+<td>114.313</td>
+<td>114.313(0.000)</td>
+<tr>
+<td>top_trx/filter_inst/</td>
+<td>0.035</td>
+<td>0.035(0.000)</td>
+<tr>
+<td>top_trx/pll/</td>
+<td>0.722</td>
+<td>0.722(0.000)</td>
+<tr>
+<td>top_trx/rx/</td>
+<td>71.478</td>
+<td>71.478(64.878)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/</td>
+<td>3.787</td>
+<td>3.787(3.707)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[0].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[0].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[1].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[1].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[2].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[2].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[3].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[3].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[4].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[4].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[5].cic_comb_inst/</td>
+<td>0.231</td>
+<td>0.231(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_I1/cic_stages[5].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/</td>
+<td>3.787</td>
+<td>3.787(3.707)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[0].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[0].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[1].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[1].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[2].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[2].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[3].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[3].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[4].cic_comb_inst/</td>
+<td>0.327</td>
+<td>0.327(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[4].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[5].cic_comb_inst/</td>
+<td>0.231</td>
+<td>0.231(0.000)</td>
+<tr>
+<td>top_trx/rx/cic_inst_IQ/cic_stages[5].cic_integrator_inst/</td>
+<td>0.307</td>
+<td>0.307(0.000)</td>
+<tr>
+<td>top_trx/rx/cordic_rx/</td>
+<td>9.306</td>
+<td>9.306(0.000)</td>
+<tr>
+<td>top_trx/rx/fir_coeffs_inst/</td>
+<td>0.925</td>
+<td>0.925(0.890)</td>
+<tr>
+<td>top_trx/rx/fir_coeffs_inst/fir_coeffs_rom_inst/</td>
+<td>0.890</td>
+<td>0.890(0.000)</td>
+<tr>
+<td>top_trx/rx/fir_inst_I/</td>
+<td>14.657</td>
+<td>14.657(14.489)</td>
+<tr>
+<td>top_trx/rx/fir_inst_I/fir_mac_inst/</td>
+<td>4.664</td>
+<td>4.664(4.424)</td>
+<tr>
+<td>top_trx/rx/fir_inst_I/fir_mac_inst/mult_24Sx24S_inst/</td>
+<td>4.424</td>
+<td>4.424(0.000)</td>
+<tr>
+<td>top_trx/rx/fir_inst_I/shift_r/</td>
+<td>9.825</td>
+<td>9.825(0.000)</td>
+<tr>
+<td>top_trx/rx/fir_inst_Q/</td>
+<td>14.651</td>
+<td>14.651(14.489)</td>
+<tr>
+<td>top_trx/rx/fir_inst_Q/fir_mac_inst/</td>
+<td>4.664</td>
+<td>4.664(4.424)</td>
+<tr>
+<td>top_trx/rx/fir_inst_Q/fir_mac_inst/mult_24Sx24S_inst/</td>
+<td>4.424</td>
+<td>4.424(0.000)</td>
+<tr>
+<td>top_trx/rx/fir_inst_Q/shift_r/</td>
+<td>9.826</td>
+<td>9.826(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/</td>
+<td>8.882</td>
+<td>8.882(8.713)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[0].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[0].cic_integrator_inst/</td>
+<td>2.074</td>
+<td>2.074(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[1].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[1].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[2].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[2].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[3].cic_comb_inst/</td>
+<td>0.225</td>
+<td>0.225(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_I1/cic_stages[3].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/</td>
+<td>8.883</td>
+<td>8.883(8.713)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[0].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[0].cic_integrator_inst/</td>
+<td>2.074</td>
+<td>2.074(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[1].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[1].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[2].cic_comb_inst/</td>
+<td>0.272</td>
+<td>0.272(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[2].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[3].cic_comb_inst/</td>
+<td>0.225</td>
+<td>0.225(0.000)</td>
+<tr>
+<td>top_trx/rx/varcic_inst_Q1/cic_stages[3].cic_integrator_inst/</td>
+<td>1.866</td>
+<td>1.866(0.000)</td>
+<tr>
+<td>top_trx/spi/</td>
+<td>0.087</td>
+<td>0.087(0.000)</td>
+<tr>
+<td>top_trx/tx/</td>
+<td>49.829</td>
+<td>49.829(43.238)</td>
+<tr>
+<td>top_trx/tx/cordic_inst/</td>
+<td>15.728</td>
+<td>15.728(0.000)</td>
+<tr>
+<td>top_trx/tx/fi/</td>
+<td>3.789</td>
+<td>3.789(1.610)</td>
+<tr>
+<td>top_trx/tx/fi/fir_i/</td>
+<td>1.361</td>
+<td>1.361(0.000)</td>
+<tr>
+<td>top_trx/tx/fi/your_instance_name/</td>
+<td>0.249</td>
+<td>0.249(0.000)</td>
+<tr>
+<td>top_trx/tx/in2/</td>
+<td>23.721</td>
+<td>23.721(0.000)</td>
+</table>
+<h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Clock Domain</th>
+<th class="label">Clock Frequency(Mhz)</th>
+<th class="label">Total Dynamic Power(mW)</th>
+</tr>
+<tr>
+<td>clk61</td>
+<td>61.440</td>
+<td>65.623</td>
+</tr>
+<tr>
+<td>n50_4</td>
+<td>100.000</td>
+<td>0.060</td>
+</tr>
+<tr>
+<td>_spi_done</td>
+<td>100.000</td>
+<td>70.305</td>
+</tr>
+<tr>
+<td>clk96</td>
+<td>95.997</td>
+<td>43.261</td>
+</tr>
+<tr>
+<td>spi_sck</td>
+<td>20.000</td>
+<td>0.027</td>
+</tr>
+<tr>
+<td>test_d</td>
+<td>100.000</td>
+<td>57.378</td>
+</tr>
+<tr>
+<td>pll/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>10.240</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>tx/req1</td>
+<td>100.000</td>
+<td>0.028</td>
+</tr>
+</table>
+</div><!-- content -->
+</div><!-- main_wrapper -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2AR-18" package="QFN88" speed="8" partNumber="GW2AR-LV18QN88C8/I7"/>
+    <FileList>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cdc_sync.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cic_interp.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_rx.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/cordic_tx.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fifo/fifo.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/filter.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/fir.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/firinterp.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/receiver.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/spi_module.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/top_transceiver.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/transmitter.v" type="verilog"/>
+        <File path="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/src/varcic.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="1"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="/home/tvl/Arduino/esp32-s3-sdr-LCD-spi/fpga_projects/gowin_project/impl/gwsynthesis/Transceiver.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="top_trx"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
