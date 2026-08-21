@@ -1,79 +1,80 @@
 {
+ "Device" : "GW2AR-18",
  "Files" : [
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cdc_sync.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cdc_sync.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic_interp.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic_interp.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cordic_rx.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cordic_rx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cordic_tx.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cordic_tx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fifo/fifo.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fifo/fifo.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/filter.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/filter.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/firinterp.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/firinterp.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/spi_module.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/spi_module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/transmitter.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/transmitter.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+   "Path" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
    "Type" : "verilog"
   }
  ],
@@ -81,7 +82,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/impl/temp/rtl_parser.result",
+ "ResultFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/impl/temp/rtl_parser.result",
  "Top" : "top_trx",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"

@@ -44,6 +44,24 @@ always @(posedge sck or negedge rstb)
 			else  begin rdata=rreg; done=1; nb=0; end
 		end	 //if(!ss)_END  if(nb==8)
   end
+/*
+//read from  sdout
+always @(posedge sck or negedge rstb)
+  begin
+    if (rstb==0)
+		begin rreg = 0;  rdata = 0; done = 0; nb = 0; end   //
+	else if (!ss) begin 
+			if(mlb==0)  //LSB first, in@msb -> right shift
+				begin rreg ={sdin,rreg[WIDTH-1:1]}; end
+			else     //MSB first, in@lsb -> left shift
+				begin rreg ={rreg[WIDTH-2:0],sdin}; end  
+		//increment bit count
+			nb=nb+1;
+			if(nb!=WIDTH) done=0;
+			else  begin rdata=rreg; done=1; nb=0; end
+		end	 //if(!ss)_END  if(nb==8)
+  end
+*/
 
 //send to  sdout
 always @(negedge sck or negedge rstb)

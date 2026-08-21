@@ -1,30 +1,22 @@
-Reading netlist file: "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\gwsynthesis\Transceiver.vg"
-Parsing netlist file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\gwsynthesis\Transceiver.vg" completed
+Reading netlist file: "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\gwsynthesis\Transceiver.vg"
+Parsing netlist file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\gwsynthesis\Transceiver.vg" completed
 Processing netlist completed
-Reading constraint file: "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\Transceiver.cst"
+Reading constraint file: "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\Transceiver.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
+WARN  (TA1132) :  '_spi_done' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
-WARN  (PR1014) : Generic routing resource will be used to clock signal 'SPI_SCK_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
-Running timing analysis......
-[95%] Timing analysis completed
-Placement and routing completed
-Bitstream generation in progress......
-Bitstream generation completed
-Running power analysis......
-[100%] Power analysis completed
-Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\Transceiver.power.html" completed
-Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\Transceiver.pin.html" completed
-Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\Transceiver.rpt.html" completed
-Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\Transceiver.rpt.txt" completed
-Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\Transceiver.tr.html" completed
-Fri Aug 21 18:06:51 2026
+ERROR  (PR0004) : There are total 419 unrouted nets
+Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\pnr\Transceiver.pin.html" completed
+Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\pnr\Transceiver.rpt.html" completed
+Generate file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\pnr\Transceiver.rpt.txt" completed
+Fri Aug 21 21:13:57 2026
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top_trx" Register="164" Alu="14" Lut="27" T_Register="4815(164)" T_Alu="5045(14)" T_Lut="2624(27)" T_MULT18X18="2(0)" T_MULT36X36="2(0)" T_Bsram="10(0)" T_Ssram="6(0)">
+<Module name="top_trx" Register="164" Alu="14" Lut="8" T_Register="4887(164)" T_Alu="5045(14)" T_Lut="2632(8)" T_MULT18X18="2(0)" T_MULT36X36="2(0)" T_Bsram="13(0)" T_Ssram="22(0)">
  <SubModule name="pll_inst"/>
- <SubModule name="filter_inst" Register="5" Lut="42" T_Register="5(5)" T_Lut="42(42)"/>
- <SubModule name="rx" Register="123" Lut="47" T_Register="2445(123)" T_Alu="2543(0)" T_Lut="1316(47)" T_MULT36X36="2(0)" T_Bsram="3(0)">
+ <SubModule name="filter_inst" Register="5" Lut="44" T_Register="5(5)" T_Lut="44(44)"/>
+ <SubModule name="rx" Register="123" Lut="47" T_Register="2445(123)" T_Alu="2543(0)" T_Lut="1318(47)" T_MULT36X36="2(0)" T_Bsram="3(0)">
   <SubModule name="cordic_rx" Register="1012" Alu="1710" Lut="834" T_Register="1012(1012)" T_Alu="1710(1710)" T_Lut="834(834)"/>
-  <SubModule name="varcic_inst_SHARED" Register="37" Alu="15" Lut="116" T_Register="418(37)" T_Alu="271(15)" T_Lut="116(116)">
+  <SubModule name="varcic_inst_SHARED" Register="37" Alu="15" Lut="118" T_Register="418(37)" T_Alu="271(15)" T_Lut="118(118)">
    <SubModule name="cic_stages[0].cic_integrator_inst" Register="32" Alu="32" T_Register="32(32)" T_Alu="32(32)"/>
    <SubModule name="cic_stages[0].cic_comb_inst" Register="64" Alu="32" T_Register="64(64)" T_Alu="32(32)"/>
    <SubModule name="cic_stages[1].cic_integrator_inst" Register="32" Alu="32" T_Register="32(32)" T_Alu="32(32)"/>
@@ -41,6 +41,7 @@
   </SubModule>
  </SubModule>
  <SubModule name="done" Register="2" T_Register="2(2)"/>
+ <SubModule name="cont" Ssram="16" T_Ssram="16(16)"/>
  <SubModule name="tx" Register="32" T_Register="2017(32)" T_Alu="2477(0)" T_Lut="1083(0)" T_MULT18X18="2(0)" T_Bsram="2(0)">
   <SubModule name="fi" Register="154" Alu="45" Lut="145" MULT18X18="2" T_Register="154(154)" T_Alu="45(45)" T_Lut="145(145)" T_MULT18X18="2(2)" T_Bsram="2(0)">
    <SubModule name="fir_i" Bsram="1" T_Bsram="1(1)"/>
@@ -49,6 +50,6 @@
   <SubModule name="in2" Register="780" Alu="578" Lut="5" T_Register="780(780)" T_Alu="578(578)" T_Lut="5(5)"/>
   <SubModule name="cordic_inst" Register="1051" Alu="1854" Lut="933" T_Register="1051(1051)" T_Alu="1854(1854)" T_Lut="933(933)"/>
  </SubModule>
- <SubModule name="spi" Register="128" Lut="58" T_Register="128(128)" T_Lut="58(58)"/>
- <SubModule name="fifo_main" Register="54" Alu="11" Lut="98" Bsram="5" Ssram="6" T_Register="54(54)" T_Alu="11(11)" T_Lut="98(98)" T_Bsram="5(5)" T_Ssram="6(6)"/>
+ <SubModule name="spi" Register="200" Lut="81" T_Register="200(200)" T_Lut="81(81)"/>
+ <SubModule name="fifo_main" Register="54" Alu="11" Lut="98" Bsram="8" Ssram="6" T_Register="54(54)" T_Alu="11(11)" T_Lut="98(98)" T_Bsram="8(8)" T_Ssram="6(6)"/>
 </Module>

@@ -35,7 +35,21 @@ module top_trx(
 	
 	// 16-битные шины квадратур под оптимизированный Receiver.v
 	wire signed [15:0] rx_real, rx_imag;
+
+
+// ОПТИМИЗИРОВАНО 64 БИТ:
+//wire signed [23:0] rx_real, rx_imag;
+wire [63:0] control;
+wire [63:0] rxFromFifo;
+reg  [63:0] rxToFifo;
+reg  [11:0] reg_adc_data;
+wire spi_done;
+reg  [31:0] rx_freq;
+reg [31:0] tx_freq;
+reg signed [15:0]tx_real,tx_imag;
 	
+/*
+    wire signed [15:0] rx_real, rx_imag;
 	// ОПТИМИЗИРОВАНО ПОД 40 БИТ: Все управляющие шины сужены до 40 бит (5 байт)
 	wire [39:0] control;
 	wire [39:0] rxFromFifo;
@@ -45,6 +59,7 @@ module top_trx(
 	reg  [31:0] rx_freq;
 	reg  [31:0] tx_freq;
 	reg signed [15:0] tx_real, tx_imag;
+*/
 
 	// СЕТЬ СИНХРОННЫХ ЧАСТОТ НА БАЗЕ ЕДИНОЙ ЧАСТОТЫ 60 МГц
 	wire clk_60m;       // ЕДИНСТВЕННАЯ базовая частота 60.00 МГц для всего SDR-тракта
@@ -103,7 +118,10 @@ module top_trx(
 		.decim(decim)
 	);
 
-	//------------------------------------------------------------------------------
+	
+
+    /*
+    //------------------------------------------------------------------------------
 	// СИНХРОНИЗАЦИЯ И РАЗБОР КОМАНД SPI (Карта регистров 40 бит)
 	//------------------------------------------------------------------------------
 	wire _spi_done;
@@ -165,6 +183,54 @@ module top_trx(
 			endcase
 		end
 	end
+    */
+    //*************************************************************************
+	/*команды управления из MCU в FPGA (слово 64 bit)
+        Режим приема:
+		control[43:36] - уровень выхода DAC (слово управления dac_pwm)
+		control[35] - управление входным аттенюатором on/off
+      control[34] - увч on/off
+		control[33:32] - частота дискретизации
+							  (00->24kHz 01->48kHz 10->96kHz)
+		control[31:0]  - слово частоты приема (не фактическая, а частота начала спектра на экране)
+        -------------------------------------------------------
+        Режим передачи:
+      control[63:32] - частота передачи
+      control[31:0] - real:imag из MCU
+	*/
+	//*************************************************************************
+
+	wire _spi_done;
+
+	cdc_sync #(1) done(.siga(spi_done), .rstb(1'b0), .clkb(clk_10m), .sigb(_spi_done));
+
+    wire [63:0] _control;
+	cdc_sync #(64) cont(.siga(control), .rstb(1'b0), .clkb(clk_10m), .sigb(_control));
+		
+	reg [63:0] v_control;
+	
+		always @(posedge _spi_done)  begin
+        //convert litle endian to big endian for data from esp32 only
+        v_control = {_control[7:0],_control[15:8], _control[23:16],_control[31:24],
+				 _control[39:32],_control[47:40],_control[55:48],_control[63:56]};
+        
+		if(n_ptt)
+			begin
+				dac_level <= v_control[43:36];
+				att_on <= v_control[35];
+                preamp_on = v_control[34];
+				s_rate <= v_control[33:32];
+				rx_freq <= v_control[31:0];
+                tx_freq <= 32'b0;
+			end
+		else
+			begin
+			  tx_real <= v_control[31:16];
+			  tx_imag <= v_control[15:0];
+			  tx_freq <= v_control[63:32];
+			end
+        //end
+    end
 
 	// Передающий тракт SDR работает на частоте 60 МГц
 	Transmitter tx (
@@ -176,15 +242,17 @@ module top_trx(
 		.tx_imag(tx_imag)
 	);
 
-	// ИСПРАВЛЕНО НА 40 БИТ: Плотная упаковка 16-битного звука и флагов в FIFO
+	// ИСПРАВЛЕНО НА 64 БИТ: Плотная упаковка 16-битного звука и флагов в FIFO
 	always @(posedge clk_10m) begin
 		if (decim) begin
-			rxToFifo <= {~n_ptt, ~n_tune, ~n_cw_key, 5'b0, rx_real[15:0], rx_imag[15:0]};
+			//rxToFifo <= {~n_ptt, ~n_tune, ~n_cw_key, 5'b0, rx_real[15:0], rx_imag[15:0]};//40
+            rxToFifo <= {~n_ptt,~n_tune,~n_cw_key,5'b0,rx_real,8'b0,rx_imag};//64
 		end
 	end
 
-	// SPI Slave модуль переопределен на ширину 40 бит (5 байт)
-	spi_slave #(.WIDTH(40)) spi(
+/*	
+// SPI Slave модуль переопределен на ширину 64 бит
+	spi_slave #(.WIDTH(64)) spi(
 		.rstb(reset),              
 		.ten(reset),
 		.tdata({rxFromFifo[7:0], rxFromFifo[15:8], rxFromFifo[23:16], rxFromFifo[31:24], rxFromFifo[39:32]}),
@@ -196,6 +264,24 @@ module top_trx(
 		.done(spi_done),               
 		.rdata(control)                
 	);
+*/
+
+// SPI module, slave, mode3
+	spi_slave  #(.WIDTH(64)) spi(
+		.rstb(reset),              //input
+		.ten(reset),
+		//convert big endian to little endian for esp32 only
+		.tdata({rxFromFifo[7:0],rxFromFifo[15:8], rxFromFifo[23:16],rxFromFifo[31:24],
+				 rxFromFifo[39:32],rxFromFifo[47:40],rxFromFifo[55:48],rxFromFifo[63:56]}),
+		.mlb(1'b1),
+		.ss(SPI_SS),                   //input
+		.sck(SPI_SCK),                //input
+		.sdin(SPI_MOSI),               //input
+		.sdout(SPI_MISO),              //output
+		.done(spi_done),               //output
+		.rdata(control)                //output
+	);
+/*
 
 	// Полностью синхронное тактирование FIFO
 	fifo fifo_main(
@@ -210,6 +296,23 @@ module top_trx(
 		.Empty(),            
 		.Full()              
 	);
+*/
+
+	fifo fifo_main(
+		.Data(rxToFifo), //input [63:0] Data
+		.WrReset(!reset), //input WrReset
+		.RdReset(!reset), //input RdReset
+		.WrClk(decim), //input WrClk
+		.RdClk(_spi_done), //input RdClk
+		.WrEn(reset), //input WrEn
+		.RdEn(1'b1), //input RdEn
+		.Q(rxFromFifo), //output [63:0] Q
+		.Empty(), //output Empty
+		.Full() //output Full
+	);
+
+
+
 	
 	// Контроллер уровня мощности (PWM) на частоте 10 МГц
 	reg [7:0] dac_level;

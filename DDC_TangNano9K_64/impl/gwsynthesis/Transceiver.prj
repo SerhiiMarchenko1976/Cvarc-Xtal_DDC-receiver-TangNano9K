@@ -4,32 +4,32 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\cdc_sync.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\cic.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\cic_interp.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\cordic_rx.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\cordic_tx.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\fifo\fifo.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\filter.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\fir.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\firinterp.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_mult\gowin_mult.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_prom\gowin_prom.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_prom\gowin_prom_fir.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_rpll\gowin_rpll.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_sdpb\Gowin_SDPB_36x64.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\gowin_sp\gowin_sp_shift.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\receiver.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\spi_module.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\top_transceiver.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\transmitter.v" type="verilog"/>
-        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\varcic.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cdc_sync.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cic.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cic_interp.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cordic_rx.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cordic_tx.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\fifo.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\filter.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fir.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\firinterp.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_mult\gowin_mult.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_prom\gowin_prom.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_prom\gowin_prom_fir.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_rpll\gowin_rpll.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_sdpb\Gowin_SDPB_36x64.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_sp\gowin_sp_shift.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\receiver.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\spi_module.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\top_transceiver.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\transmitter.v" type="verilog"/>
+        <File path="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\varcic.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
         <Option type="global_freq" value="50.000"/>
         <Option type="looplimit" value="2000"/>
-        <Option type="output_file" value="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\gwsynthesis\Transceiver.vg"/>
+        <Option type="output_file" value="D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\gwsynthesis\Transceiver.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
         <Option type="top_module" value="top_trx"/>

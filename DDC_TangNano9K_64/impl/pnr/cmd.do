@@ -1,9 +1,9 @@
--d D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\gwsynthesis\Transceiver.vg
+-d D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\gwsynthesis\Transceiver.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\Transceiver.cst
--cfg D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\impl\pnr\device.cfg
--sdc D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K\src\Transceiver.sdc
+-cst D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\Transceiver.cst
+-cfg D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\impl\pnr\device.cfg
+-sdc D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\Transceiver.sdc
 -bit
 -tr
 -ph

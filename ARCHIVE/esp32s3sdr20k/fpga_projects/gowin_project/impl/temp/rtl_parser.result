@@ -1,451 +1,451 @@
 [
  {
-  "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+  "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
   "InstLine" : 3,
   "InstName" : "top_trx",
-  "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+  "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
   "ModuleLine" : 3,
   "ModuleName" : "top_trx",
   "SubInsts" : [
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 60,
     "InstName" : "pll",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_rpll/gowin_rpll.v",
     "ModuleLine" : 9,
     "ModuleName" : "Gowin_rPLL"
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 67,
     "InstName" : "filter_inst",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/filter.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/filter.v",
     "ModuleLine" : 1,
     "ModuleName" : "filter"
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 74,
     "InstName" : "rx",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
     "ModuleLine" : 3,
     "ModuleName" : "Receiver",
     "SubInsts" : [
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 39,
       "InstName" : "cordic_rx",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cordic_rx.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cordic_rx.v",
       "ModuleLine" : 7,
       "ModuleName" : "cordic_rx"
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 55,
       "InstName" : "varcic_inst_I1",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
       "ModuleLine" : 8,
       "ModuleName" : "varcic",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 67,
       "InstName" : "varcic_inst_Q1",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
       "ModuleLine" : 8,
       "ModuleName" : "varcic",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 83,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 131,
         "ModuleName" : "cic_integrator"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "InstLine" : 91,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/varcic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/varcic.v",
         "ModuleLine" : 150,
         "ModuleName" : "cic_comb"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 83,
       "InstName" : "cic_inst_I1",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
       "ModuleLine" : 1,
       "ModuleName" : "cic",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[4].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[4].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[5].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[5].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 94,
       "InstName" : "cic_inst_IQ",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
       "ModuleLine" : 1,
       "ModuleName" : "cic",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[0].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[0].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[1].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[1].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[2].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[2].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[3].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[3].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[4].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[4].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 63,
         "InstName" : "cic_stages[5].cic_integrator_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 123,
         "ModuleName" : "cic_integrator1"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "InstLine" : 71,
         "InstName" : "cic_stages[5].cic_comb_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic.v",
         "ModuleLine" : 97,
         "ModuleName" : "cic_comb1"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 108,
       "InstName" : "fir_coeffs_inst",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
       "ModuleLine" : 138,
       "ModuleName" : "fir_coeffs",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "InstLine" : 150,
         "InstName" : "fir_coeffs_rom_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_prom/gowin_prom_fir.v",
         "ModuleLine" : 9,
         "ModuleName" : "Gowin_pROM_fir"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 120,
       "InstName" : "fir_inst_I",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
       "ModuleLine" : 8,
       "ModuleName" : "fir",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "InstLine" : 93,
         "InstName" : "shift_r",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "ModuleLine" : 162,
         "ModuleName" : "shift_reg"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "InstLine" : 105,
         "InstName" : "fir_mac_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "ModuleLine" : 115,
         "ModuleName" : "fir_mac",
         "SubInsts" : [
          {
-          "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
           "InstLine" : 126,
           "InstName" : "mult_24Sx24S_inst",
-          "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
+          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
           "ModuleLine" : 9,
           "ModuleName" : "Gowin_MULT"
          }
@@ -454,34 +454,34 @@
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/receiver.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/receiver.v",
       "InstLine" : 131,
       "InstName" : "fir_inst_Q",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
       "ModuleLine" : 8,
       "ModuleName" : "fir",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "InstLine" : 93,
         "InstName" : "shift_r",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "ModuleLine" : 162,
         "ModuleName" : "shift_reg"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "InstLine" : 105,
         "InstName" : "fir_mac_inst",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
         "ModuleLine" : 115,
         "ModuleName" : "fir_mac",
         "SubInsts" : [
          {
-          "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fir.v",
+          "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fir.v",
           "InstLine" : 126,
           "InstName" : "mult_24Sx24S_inst",
-          "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
+          "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_mult/gowin_mult.v",
           "ModuleLine" : 9,
           "ModuleName" : "Gowin_MULT"
          }
@@ -492,95 +492,95 @@
     ]
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 102,
     "InstName" : "done",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cdc_sync.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cdc_sync.v",
     "ModuleLine" : 29,
     "ModuleName" : "cdc_sync"
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 104,
     "InstName" : "cont",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cdc_sync.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cdc_sync.v",
     "ModuleLine" : 29,
     "ModuleName" : "cdc_sync"
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 129,
     "InstName" : "tx",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/transmitter.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/transmitter.v",
     "ModuleLine" : 4,
     "ModuleName" : "Transmitter",
     "SubInsts" : [
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/transmitter.v",
       "InstLine" : 26,
       "InstName" : "fi",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/firinterp.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/firinterp.v",
       "ModuleLine" : 6,
       "ModuleName" : "FirInterp8",
       "SubInsts" : [
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/firinterp.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/firinterp.v",
         "InstLine" : 59,
         "InstName" : "fir_i",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_prom/gowin_prom.v",
         "ModuleLine" : 9,
         "ModuleName" : "Gowin_pROM"
        },
        {
-        "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/firinterp.v",
+        "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/firinterp.v",
         "InstLine" : 74,
         "InstName" : "your_instance_name",
-        "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v",
+        "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/gowin_ram16sdp/gowin_ram16sdp.v",
         "ModuleLine" : 9,
         "ModuleName" : "Gowin_RAM16SDP"
        }
       ]
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/transmitter.v",
       "InstLine" : 28,
       "InstName" : "in2",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cic_interp.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cic_interp.v",
       "ModuleLine" : 5,
       "ModuleName" : "CicInterpM5"
      },
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/transmitter.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/transmitter.v",
       "InstLine" : 33,
       "InstName" : "cordic_inst",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/cordic_tx.v",
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/cordic_tx.v",
       "ModuleLine" : 25,
       "ModuleName" : "cordic_tx"
      }
     ]
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 142,
     "InstName" : "spi",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/spi_module.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/spi_module.v",
     "ModuleLine" : 13,
     "ModuleName" : "spi_slave"
    },
    {
-    "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/top_transceiver.v",
+    "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/top_transceiver.v",
     "InstLine" : 157,
     "InstName" : "fifo_main",
-    "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fifo/fifo.v",
+    "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fifo/fifo.v",
     "ModuleLine" : 680,
     "ModuleName" : "fifo",
     "SubInsts" : [
      {
-      "InstFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fifo/fifo.v",
+      "InstFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fifo/fifo.v",
       "InstLine" : 705,
       "InstName" : "fifo_inst",
-      "ModuleFile" : "/home/tvl/Arduino/esp32-s3-sdr/fpga_projects/gowin_project/src/fifo/fifo.v",
-      "ModuleLine" : 1,
+      "ModuleFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/ARCHIVE/esp32s3sdr20k/fpga_projects/gowin_project/src/fifo/fifo.v",
+      "ModuleLine" : 12,
       "ModuleName" : "~fifo.fifo"
      }
     ]

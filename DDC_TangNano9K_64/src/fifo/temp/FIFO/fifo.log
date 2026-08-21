@@ -1,7 +1,7 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\temp\FIFO\fifo_define.v'
-Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\temp\FIFO\fifo_parameter.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\temp\FIFO\fifo_define.v'
+Analyzing Verilog file 'D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\temp\FIFO\fifo_parameter.v'
 Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.11.02_x64\IDE\ipcore\FIFO\data\edc.v'
 Analyzing included file 'fifo_define.v'("C:\Gowin\Gowin_V1.9.11.02_x64\IDE\ipcore\FIFO\data\edc.v":14373)
 Back to file 'C:\Gowin\Gowin_V1.9.11.02_x64\IDE\ipcore\FIFO\data\edc.v'("C:\Gowin\Gowin_V1.9.11.02_x64\IDE\ipcore\FIFO\data\edc.v":14373)
@@ -41,7 +41,7 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\temp\FIFO\fifo.vg" completed
-Generate template file "D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\temp\FIFO\fifo_tmp.v" completed
-[100%] Generate report file "D:\DOWNLOAS\DDC_TangNano20K\DDC_TangNano9K\src\fifo\temp\FIFO\fifo_syn.rpt.html" completed
+[95%] Generate netlist file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\temp\FIFO\fifo.vg" completed
+Generate template file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\temp\FIFO\fifo_tmp.v" completed
+[100%] Generate report file "D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\temp\FIFO\fifo_syn.rpt.html" completed
 GowinSynthesis finish
