@@ -221,13 +221,13 @@ void drawinfo(){
       gfx.print(tp_y);
       //gfx.print(" ");gfx.print(a_heap);gfx.print("/");gfx.print(b_heap);
 }
-
+/* перенос в fft scroll_wp();
 void scroll_wp(){ //сдвиг массива строк "водопада"
       uint8_t tmp = wp_num[WP_LINE-1];
       for (int i=WP_LINE-1;i>0;i--) {wp_num[i] = wp_num[i-1];}
       wp_num[0]=tmp;
 }
-
+*/
 void peak_down(){//плавно снижаем уровни спектра и панорамы
    for (int i=0;i<NUM_SAMPLE_BUF;i++){
         if (fft_inter[i]>limited_fft/2)fft_inter[i]-=limited_fft/20;
@@ -348,7 +348,8 @@ void x_display(){
    draw_waterfall(); //отобразить панораму
    screen_control();
    drawinfo(); //показать fps
-   if(txrx_mode==RX_MODE)scroll_wp();//сдвинуть панораму на 1 строку вниз
+   //перенос в fft
+   //if(txrx_mode==RX_MODE)scroll_wp();//сдвинуть панораму на 1 строку вниз
    peak_down();//инкремент показателей спектра и панорамы
 }
 

@@ -12,7 +12,7 @@
 
 #define TOUCH_WIDTH  320
 #define TOUCH_HEIGHT 480
-#define MAX_TOUCH_POINTS  10
+#define MAX_TOUCH_POINTS  2
 
 #define FW_VER     0x0000
 #define STATUS     0x0001

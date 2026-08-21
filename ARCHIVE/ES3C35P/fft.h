@@ -131,8 +131,16 @@ uint16_t select_color(int val,int max){
   return hsv_to_rgb(h,s,v);  
 }
 
+// перенос в fft scroll_wp();
+void scroll_wp(){ //сдвиг массива строк "водопада"
+      uint8_t tmp = wp_num[WP_LINE-1];
+      for (int i=WP_LINE-1;i>0;i--) {wp_num[i] = wp_num[i-1];}
+      wp_num[0]=tmp;
+}
+
 void fft_for_display(float* input){
-    
+    // перенос в fft scroll_wp();
+    scroll_wp();
     //static float input_tmp[NUM_SAMPLE_BUF];
     for (int i = 0 ; i < NUM_SAMPLE_BUF/2; i++) {
       //input[i*2] = input[i*2] * wind[i];
