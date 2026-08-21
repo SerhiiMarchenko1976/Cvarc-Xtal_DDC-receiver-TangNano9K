@@ -1,0 +1,22 @@
+-series GW2AR
+-device GW2AR-18
+-package QFN88
+-part_number GW2AR-LV18QN88C8/I7
+
+
+-mod_name Gowin_MULT
+-file_name gowin_mult
+-path /home/tvl/Gowin/Projects/Transceiver/src/gowin_mult/
+-type MULT
+-file_type vlg
+-source_a parallel
+-source_b parallel
+-width_a 24
+-width_b 24
+-data_type_a signed
+-data_type_b signed
+-reset_mode sync
+-ina_reg registered
+-inb_reg registered
+-pipe_reg bypass
+-out_reg registered
