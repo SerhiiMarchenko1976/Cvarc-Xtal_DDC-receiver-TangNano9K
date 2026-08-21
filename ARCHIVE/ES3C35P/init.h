@@ -1,13 +1,23 @@
 #include "hal/i2s_hal.h"
 
 void spi_init(){
-
+  // master.setDataMode(SPI_MODE3);             // Режим MODE3 под rPLL нашей ПЛИС
+  // master.setFrequency(50000000);             // 50 МГц скоростной связи
   master.setDataMode(SPI_MODE0);
   master.setFrequency(20000000);
+  // ИСПРАВЛЕНО: Жестко ограничиваем транзакцию DMA пятью байтами (40 бит)
+  //master.setMaxTransferSize(5);   
   master.setMaxTransferSize(SPI_BUFFER_SIZE);
   master.setDutyCyclePos(96);              
   master.begin(1, SPI_SCLK, SPI_MISO, SPI_MOSI, SPI_SS);
+  // SPI2_HOST не равно 1 ?
+  //master.begin(SPI2_HOST, SPI_SCLK, SPI_MISO, SPI_MOSI, SPI_SS); 
+  // КРИТИЧЕСКИ ВАЖНО: Выделяем физическую память под буферы с запасом 
+  // до 8 байт для безопасного 32-битного выравнивания DMA-автомата!
+  //spi_master_tx_buf = (uint8_t*)heap_caps_malloc(8, MALLOC_CAP_DMA);
+  //spi_master_rx_buf = (uint8_t*)heap_caps_malloc(8, MALLOC_CAP_DMA);
 }
+
 
 void buf_init(){
   for(int i=0;i<NTAPS_RX+1;i++){
@@ -78,11 +88,12 @@ static void tp_init(){
   //tp.begin();
   //tp.setRotation(ROTATION_INVERTED);
 }
-
+/*
+// i2s два отдельных канала 
 static void i2s_init()
 {
     i2s_chan_config_t RXchan_cfg_tx = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
-    //i2s_chan_config_t TXchan_cfg_rx = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    i2s_chan_config_t TXchan_cfg_rx = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
 
    // i2s_new_channel(&TXchan_cfg_rx, &RX_chan_tx, &TX_chan_rx);
     i2s_new_channel(&RXchan_cfg_tx, &RX_chan_tx, &TX_chan_rx);
@@ -105,7 +116,7 @@ static void i2s_init()
     RX_std_cfg_tx.slot_cfg.big_endian=false;
     RX_std_cfg_tx.slot_cfg.bit_order_lsb=false;
     RX_std_cfg_tx.slot_cfg.slot_mask = I2S_STD_SLOT_LEFT;
-/*
+
 ///////////////////////TX////////////////////////////////////////
     //32-Bit, MSB-First, Left-Justified
     //i2s - микрофон 
@@ -125,7 +136,7 @@ static void i2s_init()
     TX_std_cfg_rx.slot_cfg.bit_order_lsb=false;
     TX_std_cfg_rx.slot_cfg.slot_mask = I2S_STD_SLOT_LEFT;
 
-*/
+
 /////////////////////////////////////////////////////////////////
 
     i2s_channel_init_std_mode(TX_chan_rx, &TX_std_cfg_rx);
@@ -134,7 +145,72 @@ static void i2s_init()
     i2s_channel_enable(TX_chan_rx);
     change_rx_rate = true;
 }
+*/
+
+static void i2s_init()
+{
+    // 1. Инициализируем один канал (I2S_NUM_1) в режиме MASTER
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
     
+    // Аппаратно связываем TX (выход на динамик) и RX (вход микрофона) на одну тактовую пару ES8311
+    i2s_new_channel(&chan_cfg, &RX_chan_tx, &TX_chan_rx);
+    
+    //------------------------------------------------------------------------------
+    // КОНФИГУРАЦИЯ ДУПЛЕКСНОГО ТРАКТА ПОД КОДЕК ES8311
+    //------------------------------------------------------------------------------
+    
+    // Настраиваем общую структуру тактирования для приема и передачи
+    RX_std_cfg_tx.clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(i2s_sample_rate_rx);
+    TX_std_cfg_rx.clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(i2s_sample_rate_tx);
+    
+    // ИСПРАВЛЕНО ДЛЯ C++: Прямая запись в поля структуры вместо макроса,
+    // что исключает ошибку "no match for 'operator='" и решает проблему data_bit_width!
+    RX_std_cfg_tx.slot_cfg.data_bit_width = I2S_DATA_BIT_WIDTH_16BIT;
+    RX_std_cfg_tx.slot_cfg.slot_bit_width = I2S_SLOT_BIT_WIDTH_32BIT;
+    
+    TX_std_cfg_rx.slot_cfg.data_bit_width = I2S_DATA_BIT_WIDTH_16BIT;
+    TX_std_cfg_rx.slot_cfg.slot_bit_width = I2S_SLOT_BIT_WIDTH_32BIT;
+    
+    // Назначаем одинаковые физические пины для обоих направлений дуплекса ES8311
+    RX_std_cfg_tx.gpio_cfg.mclk = STD_MCLK_OUT;    
+    RX_std_cfg_tx.gpio_cfg.bclk = STD_BCLK_OUT;
+    RX_std_cfg_tx.gpio_cfg.ws   = STD_WS_OUT;
+    RX_std_cfg_tx.gpio_cfg.dout = STD_DOUT_OUT; // Линия данных на кодек
+    RX_std_cfg_tx.gpio_cfg.din  = STD_DIN_OUT;  // Линия данных с кодека
+    
+    // Копируем ту же самую разводку пинов в структуру микрофона TX_std_cfg_rx
+    TX_std_cfg_rx.gpio_cfg = RX_std_cfg_tx.gpio_cfg;
+
+    // Сбрасываем инверсию фазы тактов
+    RX_std_cfg_tx.gpio_cfg.invert_flags.mclk_inv = false;
+    RX_std_cfg_tx.gpio_cfg.invert_flags.bclk_inv = false;
+    RX_std_cfg_tx.gpio_cfg.invert_flags.ws_inv   = false;
+    TX_std_cfg_rx.gpio_cfg.invert_flags = RX_std_cfg_tx.gpio_cfg.invert_flags;
+
+    // Настройка выравнивания данных в слоте под архитектуру ES8311 (Стандарт Philips I2S)
+    RX_std_cfg_tx.slot_cfg.bit_shift = true; // Для Philips стандарта bit_shift должен быть true
+    RX_std_cfg_tx.slot_cfg.left_align = false;
+    RX_std_cfg_tx.slot_cfg.big_endian = false;
+    RX_std_cfg_tx.slot_cfg.bit_order_lsb = false;
+    RX_std_cfg_tx.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH; // Стерео режим для звука
+
+    // Применяем те же настройки выравнивания для микрофона
+    TX_std_cfg_rx.slot_cfg.bit_shift = true;
+    TX_std_cfg_rx.slot_cfg.left_align = false;
+    TX_std_cfg_rx.slot_cfg.big_endian = false;
+    TX_std_cfg_rx.slot_cfg.bit_order_lsb = false;
+    TX_std_cfg_rx.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH;
+
+    // 2. Инициализируем оба направления STD-режима шины
+    i2s_channel_init_std_mode(RX_chan_tx, &RX_std_cfg_tx);
+    i2s_channel_init_std_mode(TX_chan_rx, &TX_std_cfg_rx);
+    
+    // 3. Включаем дуплексные каналы в работу
+    i2s_channel_enable(RX_chan_tx);
+    i2s_channel_enable(TX_chan_rx);
+    
+    change_rx_rate = true;
+}
 
 void lcd_init(int l){
     g.Init();

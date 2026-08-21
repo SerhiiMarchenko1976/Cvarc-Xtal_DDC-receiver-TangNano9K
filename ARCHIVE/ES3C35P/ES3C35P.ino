@@ -25,6 +25,7 @@
 #include "screens.h"
 #include "init.h"
 #include "tools.h"
+#include "es8311.h"
 
 
 void setup()
@@ -44,8 +45,8 @@ void setup()
   spi_init();  
   fft_init();
   i2s_init();
-  txrx_mode=RX_MODE;
-  change_rx_rate=true;
+  // Разбудить кодек ES8311 после настройки I2S каналов
+  es8311_codec_init();
   init_filters (num_filter);
   vSemaphoreCreateBinary(xIN);
   vSemaphoreCreateBinary(xDSP);
