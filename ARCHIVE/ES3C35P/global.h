@@ -7,6 +7,8 @@ ESP32DMASPI::Master master;
 
 uint8_t* spi_master_tx_buf;
 uint8_t* spi_master_rx_buf;
+
+
 #define SPI_SCLK    (gpio_num_t)45
 #define SPI_MISO    (gpio_num_t)0
 #define SPI_MOSI    (gpio_num_t)46
@@ -60,8 +62,8 @@ uint8_t* spi_master_rx_buf;
 #define TOUCH_SCL  (gpio_num_t)39
 #define TOUCH_INT  (gpio_num_t)47
 #define TOUCH_RST  (gpio_num_t)48
-#define TOUCH_WIDTH  480
-#define TOUCH_HEIGHT 320
+//#define TOUCH_WIDTH  480
+//#define TOUCH_HEIGHT 320
 
 //LCD
 #define LCD_BL  (gpio_num_t)41 //пин подсветки дисплея
@@ -92,8 +94,8 @@ uint8_t* spi_master_rx_buf;
 
 #define STACK_SIZE 2048
 
-#define RX_DIS_FREQ 61440000 //частота дискретизации приемника в плис Hz
-#define TX_DIS_FREQ 96000000 //частота дискретизации передатчика в плис Hz
+#define RX_DIS_FREQ 63000000 //частота дискретизации приемника в плис Hz
+#define TX_DIS_FREQ 63000000 //частота дискретизации передатчика в плис Hz
 
 //Arduino_DataBus *bus = new Arduino_ESP32QSPI(LCD_CS,LCD_SCK,LCD_D0,LCD_D1,LCD_D2,LCD_D3);
 //Arduino_GFX *g = new Arduino_NV3041A(bus, LCD_RST, 0 /* rotation */, true /* IPS */);
@@ -101,6 +103,29 @@ TFT_eSPI tft = TFT_eSPI();
 TFT_eSprite gfx = TFT_eSprite(&tft);
 ST77922 g = ST77922();
 //TFT_eSprite gfx = TFT_eSprite(&g);
+
+/*
+TFT_eSPI tft = TFT_eSPI();
+TFT_eSprite gfx = TFT_eSprite(&tft);
+ST77922 g = ST77922();
+ST77922_TOUCH tp = ST77922_TOUCH();
+void setup(void) 
+{
+  Serial.begin(115200); //Set the serial port baud rate 115200
+  g.Init();
+  g.Set_Rotation(0);
+  gfx.createSprite(g.Get_Width(), g.Get_Height());
+  gfx.setRotation(0);
+  gfx.setSwapBytes(1);
+  tp.init();
+  tp.Set_Rotation(1);
+  gfx.fillSprite(BLACK);
+  gfx.setTextColor(BLUE);
+  gfx.drawString("RST",gfx.width()-36,0,2);
+  g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t *)gfx.getPointer()); 
+}
+*/
+
 
 //Arduino_GFX *gfx = new Arduino_Canvas(480 /* width */, 320 /* height */, g);
 

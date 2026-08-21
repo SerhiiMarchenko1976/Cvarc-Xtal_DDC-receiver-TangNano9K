@@ -212,19 +212,45 @@ static void i2s_init()
     change_rx_rate = true;
 }
 
+
+/*
+TFT_eSPI tft = TFT_eSPI();
+TFT_eSprite gfx = TFT_eSprite(&tft);
+ST77922 g = ST77922();
+ST77922_TOUCH tp = ST77922_TOUCH();
+void setup(void) 
+{
+  g.Init();
+  g.Set_Rotation(0);
+  gfx.createSprite(g.Get_Width(), g.Get_Height());
+  gfx.setRotation(0);
+  gfx.setSwapBytes(1);
+  tp.init();
+  tp.Set_Rotation(1);
+  gfx.fillSprite(BLACK);
+  gfx.setTextColor(BLUE);
+  gfx.drawString("RST",gfx.width()-36,0,2);
+  g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(), (uint16_t *)gfx.getPointer()); 
+}
+*/
+
 void lcd_init(int l){
     g.Init();
     g.Set_Rotation(1);
     gfx.createSprite(g.Get_Width(), g.Get_Height());
+    //gfx.setRotation(1);
+    gfx.setSwapBytes(1);
+    gfx.setTextWrap(false,false);
+
     gfx.fillSprite(BLACK);
     g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
     //gfx.pushSprite(0,0);
-    gfx.setSwapBytes(1);
+    //gfx.setSwapBytes(1);
   //gfx.begin(60000000);
-  gfx.setTextWrap(false,false);
   //gfx.fillRect(0,0,480,320,BLACK);
-  g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
+  //g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
   //gfx.pushSprite(0,0);gfx.pushSprite(0,0);
+  
   ledcAttachChannel(LCD_BL, 2000, 8, 0);
   ledcWrite(LCD_BL, 125);
   //pinMode(LCD_BL, OUTPUT);
@@ -306,40 +332,21 @@ void fw_loader(){
 
 void start_ok(){
 
- //WiFi.begin(ssid, password);
- int i_time=0;
- pinMode(ROTARY_ENCODER_BUTTON_PIN,INPUT_PULLUP);
- gfx.fillScreen(BLACK);
- //gfx.setFreeFont(&FreeMonoBold14pt8b);
- gfx.setTextColor(0b1100011000011000);
+ int i_time=3;
+ //pinMode(ROTARY_ENCODER_BUTTON_PIN,INPUT_PULLUP);
+    gfx.fillScreen(BLACK);
+    //gfx.setFreeFont(&FreeMonoBold14pt8b);
+    gfx.setTextColor(0b1100011000011000);
     gfx.setFreeFont(&FreeMonoBold8pt8b);
     gfx.setTextSize(6);
     gfx.setCursor(150+xwin,170+ywin);
     gfx.print("SDR");
+    g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
     gfx.setTextSize(1);
-  
- /*
- for(int x = 70;x<300;x+=3){ //заставка
-   gfx.pushImage(70+xwin,100+ywin,344,72,myBitmap);
-   gfx.fillRect(80+xwin,170+ywin,x,5,colors[5]);
-   gfx.setCursor(70+xwin,230+ywin);gfx.setTextColor(WHITE,BLACK);//gfx.print("Click encoder to SETUP");
-   //if(gpio_get_level((gpio_num_t)ROTARY_ENCODER_BUTTON_PIN)==LOW){txrx_mode=SETUP_MODE;readConfig();speak_out = false;break;}
-   g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
-   //gfx.pushSprite(0,0);
-    //if(WiFi.status() == WL_CONNECTED && i_time == 0){
-    //    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-    //    getLocalTime(&timeinfo,5000);
-    //    i_time++;
-    //    wifi=true;
-    //} 
-    
- }
- */
- //WiFi.disconnect(true);
- //WiFi.mode(WIFI_OFF);
- speak_out = true;
- //gfx.fillScreen(BLACK);
- g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
- //gfx.pushSprite(0,0);
- gfx.fillScreen(BLACK);
+    speak_out = true;
+    //gfx.fillScreen(BLACK);
+    //g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
+    //gfx.pushSprite(0,0);
+    gfx.fillScreen(BLACK);
+    //g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
 }

@@ -81,7 +81,10 @@ ST77922::ST77922(void)
 	digitalWrite(LCD_CS, HIGH);
  	pinMode(LCD_BL, OUTPUT);
 	digitalWrite(LCD_BL, LOW);
-	const spi_bus_config_t buscfg = 
+	
+    
+    
+    const spi_bus_config_t buscfg = 
     {
         .data0_io_num = QSPI_D0,
         .data1_io_num = QSPI_D1,

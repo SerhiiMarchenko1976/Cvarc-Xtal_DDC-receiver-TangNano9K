@@ -8,7 +8,7 @@
 
 #define TOUCH_ADDR 0x55
 #define I2C_NUM 0
-#define I2C_SPEED 400000
+#define I2C_SPEED 100000
 
 #define TOUCH_WIDTH  320
 #define TOUCH_HEIGHT 480

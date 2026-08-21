@@ -22,10 +22,10 @@ void action() { //обработка нажатий на кнопки
       flag_write_config = true;
     }
     if ((bkey == 1) && flag_exit_setup) {
-      gfx.fillScreen(BLACK);
-      g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
+      //gfx.fillScreen(BLACK);
+      //g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
       //gfx.pushSprite(0,0);
-      gfx.fillScreen(BLACK);
+      //gfx.fillScreen(BLACK);
       redraw = true;
       flag_exit_setup = false;
       speak_out = true;

@@ -1,6 +1,7 @@
 //#include <WiFi.h>
 //#include "FS.h"
 //#include "SD.h"
+#include <SPI.h>
 #include <ESP32DMASPIMaster.h>  //
 #include "time.h"
 #include "driver/i2s_std.h"
@@ -66,6 +67,7 @@ void setup()
 void loop(void){
     cur_ms=millis();
     screens(txrx_mode);
+    //gfx->flush();
     //gfx.pushSprite(0,0);
     g.Fill_Colors(0, 0, g.Get_Width(), g.Get_Height(),(uint16_t*)gfx.getPointer());
     time_001();
