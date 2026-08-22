@@ -37,29 +37,18 @@ module top_trx(
 	wire signed [15:0] rx_real, rx_imag;
 
 
-// ОПТИМИЗИРОВАНО 64 БИТ:
-//wire signed [23:0] rx_real, rx_imag;
-wire [63:0] control;
-wire [63:0] rxFromFifo;
-reg  [63:0] rxToFifo;
-reg  [11:0] reg_adc_data;
-wire spi_done;
-reg  [31:0] rx_freq;
-reg [31:0] tx_freq;
-reg signed [15:0]tx_real,tx_imag;
+    // ОПТИМИЗИРОВАНО 64 БИТ:
+    // 24-битные шины квадратур под оптимизированный Receiver.v
+    //wire signed [23:0] rx_real, rx_imag;
+    wire [63:0] control;
+    wire [63:0] rxFromFifo;
+    reg  [63:0] rxToFifo;
+    reg  [11:0] reg_adc_data;
+    wire spi_done;
+    reg  [31:0] rx_freq;
+    reg [31:0] tx_freq;
+    reg signed [15:0]tx_real,tx_imag;
 	
-/*
-    wire signed [15:0] rx_real, rx_imag;
-	// ОПТИМИЗИРОВАНО ПОД 40 БИТ: Все управляющие шины сужены до 40 бит (5 байт)
-	wire [39:0] control;
-	wire [39:0] rxFromFifo;
-	reg  [39:0] rxToFifo;
-	reg  [11:0] reg_adc_data;
-	wire spi_done;
-	reg  [31:0] rx_freq;
-	reg  [31:0] tx_freq;
-	reg signed [15:0] tx_real, tx_imag;
-*/
 
 	// СЕТЬ СИНХРОННЫХ ЧАСТОТ НА БАЗЕ ЕДИНОЙ ЧАСТОТЫ 60 МГц
 	wire clk_60m;       // ЕДИНСТВЕННАЯ базовая частота 60.00 МГц для всего SDR-тракта
@@ -118,72 +107,7 @@ reg signed [15:0]tx_real,tx_imag;
 		.decim(decim)
 	);
 
-	
 
-    /*
-    //------------------------------------------------------------------------------
-	// СИНХРОНИЗАЦИЯ И РАЗБОР КОМАНД SPI (Карта регистров 40 бит)
-	//------------------------------------------------------------------------------
-	wire _spi_done;
-	
-	// Синхронизация одиночного флага spi_done (Безопасно для трассировки)
-	cdc_sync #(1) done(.siga(spi_done), .rstb(1'b0), .clkb(clk_10m), .sigb(_spi_done));
-
-	// ИСПРАВЛЕНО НА 40 БИТ: Бесплатный разворот Endianness для 5 байт напрямую из control
-	wire [39:0] v_cmd = {control[7:0], control[15:8], control[23:16], control[31:24], control[39:32]};
-
-	// Регистровый селектор: Адрес команды сидит в старшем байте v_cmd[39:32]
-	always @(posedge clk_10m) begin
-		if (_spi_done) begin
-			case (v_cmd[39:32])
-				
-				8'h01: begin // КОМАНДА 01: Частота приёма rx_freq (все 32 бита данных)
-					rx_freq <= v_cmd[31:0];
-				end
-				
-				8'h02: begin // КОМАНДА 02: Периферия (читаем из младших фиксированных бит)
-					dac_level  <= v_cmd[7:0]; 
-					att_on     <= v_cmd[8];   // Выделен четкий одиночный бит
-					preamp_on  <= v_cmd[9];   // Выделен четкий одиночный бит
-					s_rate     <= v_cmd[11:10];
-				end
-				
-				8'h03: begin // КОМАНДА 03: Поток квадратур звука передачи микрофона
-					tx_real    <= v_cmd[15:0];
-					tx_imag    <= v_cmd[31:16];
-				end
-				
-				8'h04: begin // КОМАНДА 04: Частота передачи tx_freq (все 32 бита данных)
-					tx_freq    <= v_cmd[31:0];
-				end
-                				8'h04: begin // КОМАНДА 04: Частота передачи tx_freq
-					tx_freq    <= v_cmd[31:0];
-				end
-
-				8'h05: begin // НОВАЯ КОМАНДА 05: dac_level
-					dac_level  <= v_cmd[7:0]; 
-				end
-
-				8'h06: begin // НОВАЯ КОМАНДА 06: Ширина спектра
-					s_rate     <= v_cmd[1:0];
-				end
-
-                8'h07: begin // НОВАЯ КОМАНДА 07: att_on и preamp_on
-					att_on     <= v_cmd[0];   // Выделен четкий одиночный бит
-					preamp_on  <= v_cmd[1];   // Выделен четкий одиночный бит
-				end
-				
-				
-
-				
-				default: begin
-					// Игнорируем пустые или холостые циклы чтения (например, команду h00)
-				end
-				
-			endcase
-		end
-	end
-    */
     //*************************************************************************
 	/*команды управления из MCU в FPGA (слово 64 bit)
         Режим приема:
@@ -199,38 +123,37 @@ reg signed [15:0]tx_real,tx_imag;
       control[31:0] - real:imag из MCU
 	*/
 	//*************************************************************************
+	// СИНХРОНИЗАЦИЯ И РАЗБОР КОМАНД SPI (64 БИТА)
+	//------------------------------------------------------------------------------
 
-	wire _spi_done;
+    wire _spi_done;
 
+	// Оставляем синхронизацию только для ОДНОГО бита флага готовности (это бесплатно для ПЛИС)
 	cdc_sync #(1) done(.siga(spi_done), .rstb(1'b0), .clkb(clk_10m), .sigb(_spi_done));
 
-    wire [63:0] _control;
-	cdc_sync #(64) cont(.siga(control), .rstb(1'b0), .clkb(clk_10m), .sigb(_control));
-		
-	reg [63:0] v_control;
+	// Аппаратный разворот Endianness на уровне проводов берем НАПРЯМУЮ из шины control
 	
-		always @(posedge _spi_done)  begin
-        //convert litle endian to big endian for data from esp32 only
-        v_control = {_control[7:0],_control[15:8], _control[23:16],_control[31:24],
-				 _control[39:32],_control[47:40],_control[55:48],_control[63:56]};
-        
-		if(n_ptt)
-			begin
-				dac_level <= v_control[43:36];
-				att_on <= v_control[35];
-                preamp_on = v_control[34];
-				s_rate <= v_control[33:32];
-				rx_freq <= v_control[31:0];
-                tx_freq <= 32'b0;
+	wire [63:0] v_cmd = {control[7:0], control[15:8], control[23:16], control[31:24],
+						 control[39:32], control[47:40], control[55:48], control[63:56]};
+
+	// Обработка команд строго по системному клоку clk_10m и флагу _spi_done
+	always @(posedge clk_10m) begin
+		if (_spi_done) begin
+			if (n_ptt) begin
+				dac_level  <= v_cmd[43:36];
+				att_on     <= v_cmd[35];
+				preamp_on  <= v_cmd[34];
+				s_rate     <= v_cmd[33:32];
+				rx_freq    <= v_cmd[31:0];
+				tx_freq    <= 32'b0;
+			end else begin
+				tx_real    <= v_cmd[31:16];
+				tx_imag    <= v_cmd[15:0];
+				tx_freq    <= v_cmd[63:32];
 			end
-		else
-			begin
-			  tx_real <= v_control[31:16];
-			  tx_imag <= v_control[15:0];
-			  tx_freq <= v_control[63:32];
-			end
-        //end
-    end
+		end
+	end
+
 
 	// Передающий тракт SDR работает на частоте 60 МГц
 	Transmitter tx (
@@ -242,20 +165,27 @@ reg signed [15:0]tx_real,tx_imag;
 		.tx_imag(tx_imag)
 	);
 
-	// ИСПРАВЛЕНО НА 64 БИТ: Плотная упаковка 16-битного звука и флагов в FIFO
-	always @(posedge clk_10m) begin
-		if (decim) begin
-			//rxToFifo <= {~n_ptt, ~n_tune, ~n_cw_key, 5'b0, rx_real[15:0], rx_imag[15:0]};//40
-            rxToFifo <= {~n_ptt,~n_tune,~n_cw_key,5'b0,rx_real,8'b0,rx_imag};//64
-		end
-	end
 
-/*	
-// SPI Slave модуль переопределен на ширину 64 бит
-	spi_slave #(.WIDTH(64)) spi(
+
+	// ИСПРАВЛЕНО НА 64 БИТ: Плотная упаковка 16-битного звука и флагов в FIFO        
+    // Упаковка данных в FIFO (частота clk_10m)
+            always @(posedge clk_10m) begin
+                    if (decim) begin
+                        rxToFifo <= {~n_ptt, ~n_tune, ~n_cw_key, 13'b0, rx_real, 16'b0, rx_imag};
+                        //rxToFifo <= {~n_ptt, ~n_tune, ~n_cw_key, 13'b0, rx_real[15:0], 16'b0, rx_imag[15:0]};//40
+                        //rxToFifo <= {~n_ptt,~n_tune,~n_cw_key,rx_real,rx_imag};//23rx_real 23 rx_imag
+                        
+                    end
+            end
+
+
+
+	// SPI module, slave, mode3 (Шина 'control' должна удерживать данные до следующей посылки)
+	spi_slave  #(.WIDTH(64)) spi(
 		.rstb(reset),              
 		.ten(reset),
-		.tdata({rxFromFifo[7:0], rxFromFifo[15:8], rxFromFifo[23:16], rxFromFifo[31:24], rxFromFifo[39:32]}),
+		.tdata({rxFromFifo[7:0],   rxFromFifo[15:8],  rxFromFifo[23:16], rxFromFifo[31:24],
+				rxFromFifo[39:32], rxFromFifo[47:40], rxFromFifo[55:48], rxFromFifo[63:56]}),
 		.mlb(1'b1),
 		.ss(SPI_SS),                   
 		.sck(SPI_SCK),                
@@ -264,54 +194,20 @@ reg signed [15:0]tx_real,tx_imag;
 		.done(spi_done),               
 		.rdata(control)                
 	);
-*/
 
-// SPI module, slave, mode3
-	spi_slave  #(.WIDTH(64)) spi(
-		.rstb(reset),              //input
-		.ten(reset),
-		//convert big endian to little endian for esp32 only
-		.tdata({rxFromFifo[7:0],rxFromFifo[15:8], rxFromFifo[23:16],rxFromFifo[31:24],
-				 rxFromFifo[39:32],rxFromFifo[47:40],rxFromFifo[55:48],rxFromFifo[63:56]}),
-		.mlb(1'b1),
-		.ss(SPI_SS),                   //input
-		.sck(SPI_SCK),                //input
-		.sdin(SPI_MOSI),               //input
-		.sdout(SPI_MISO),              //output
-		.done(spi_done),               //output
-		.rdata(control)                //output
-	);
-/*
-
-	// Полностью синхронное тактирование FIFO
-	fifo fifo_main(
-		.Data(rxToFifo),     
-		.WrReset(!reset),    
-		.RdReset(!reset),    
-		.WrClk(clk_10m),     
-		.RdClk(clk_10m),     
-		.WrEn(decim & reset), 
-		.RdEn(_spi_done),     
-		.Q(rxFromFifo),      
-		.Empty(),            
-		.Full()              
-	);
-*/
 
 	fifo fifo_main(
-		.Data(rxToFifo), //input [63:0] Data
-		.WrReset(!reset), //input WrReset
-		.RdReset(!reset), //input RdReset
-		.WrClk(decim), //input WrClk
-		.RdClk(_spi_done), //input RdClk
-		.WrEn(reset), //input WrEn
-		.RdEn(1'b1), //input RdEn
-		.Q(rxFromFifo), //output [63:0] Q
-		.Empty(), //output Empty
-		.Full() //output Full
+		.Data(rxToFifo),    // input [63:0] Data
+		.WrReset(!reset),   // input WrReset
+		.RdReset(!reset),   // input RdReset
+		.WrClk(clk_10m),    // ИСПРАВЛЕНО: Системный тактовый сигнал вместо строба
+		.RdClk(clk_10m),    // ИСПРАВЛЕНО: Системный тактовый сигнал вместо строба
+		.WrEn(decim & reset), // ИСПРАВЛЕНО: Строб decim управляет разрешением записи
+		.RdEn(_spi_done),   // ИСПРАВЛЕНО: Строб _spi_done управляет разрешением чтения
+		.Q(rxFromFifo),     // output [63:0] Q
+		.Empty(),           
+		.Full()             
 	);
-
-
 
 	
 	// Контроллер уровня мощности (PWM) на частоте 10 МГц
@@ -324,3 +220,4 @@ reg signed [15:0]tx_real,tx_imag;
 	end
 
 endmodule
+

@@ -39,7 +39,6 @@ Compiling module 'Gowin_SP'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver
 Compiling module 'fir_mac'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fir.v":191)
 Compiling module 'Gowin_MULT'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_mult\gowin_mult.v":9)
 Compiling module 'cdc_sync'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cdc_sync.v":29)
-Compiling module 'cdc_sync(SIZE=64)'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cdc_sync.v":29)
 Compiling module 'Transmitter'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\transmitter.v":5)
 Compiling module 'FirInterp8'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\firinterp.v":6)
 Compiling module 'Gowin_pROM'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\gowin_prom\gowin_prom.v":9)
@@ -48,8 +47,8 @@ Compiling module 'CicInterpM5(RRRR=156,IBITS=15,OBITS=15,GBITS=24)'("D:\DOWNLOAS
 Compiling module 'cordic_tx(OUT_WIDTH=14)'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\cordic_tx.v":25)
 Compiling module 'spi_slave'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\spi_module.v":13)
 WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\spi_module.v":42)
-Compiling module 'fifo'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\fifo.v":682)
-Compiling module '**'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\fifo.v":681)
+Compiling module 'fifo'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\fifo.v":360)
+Compiling module '**'("D:\DOWNLOAS\DDC_TangNano20K\Cvarc-Xtal_DDC-receiver-TangNano9K\DDC_TangNano9K_64\src\fifo\fifo.v":359)
 NOTE  (EX0101) : Current top module is "top_trx"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

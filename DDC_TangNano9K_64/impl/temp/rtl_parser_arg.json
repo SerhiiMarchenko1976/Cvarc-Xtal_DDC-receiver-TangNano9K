@@ -87,7 +87,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "D:/DOWNLOAS/DDC_TangNano20K/Cvarc-Xtal_DDC-receiver-TangNano9K/DDC_TangNano9K_64/impl/temp/rtl_parser.result",
- "Top" : "top_trx",
+ "Top" : "",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
 }
